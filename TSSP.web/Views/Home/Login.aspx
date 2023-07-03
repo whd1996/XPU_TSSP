@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TSSP.web.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TSSP.web.Login" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,11 +28,11 @@
                 <div>
                     <i class="tit-bg left"></i>
                     人才服务社交平台
-            <i class="tit-bg right"></i>
+                    <i class="tit-bg right"></i>
                 </div>
                 <p>&emsp;&emsp;&emsp;&emsp;&emsp;Talen service social platform</p>
             </div>
-            <form id="login">
+            <form id="loginForm" method="post" action="/Login/CheckLogin">
                 <p class="p user_icon">
                     <input type="text" placeholder="邮箱号" name="email" autocomplete="off" class="login_txtbx">
                 </p>
@@ -41,7 +41,7 @@
                 </p>
                 <p style="color: white" class="">
                     <input type="radio" name="role" class="login_txtbx" value="0" />企业
-             <input type="radio" name="role" class="login_txtbx" value="1" checked />大学生
+                    <input type="radio" name="role" class="login_txtbx" value="1" checked />大学生
                 </p>
                 <div class="p val_icon">
                     <div class="checkcode">

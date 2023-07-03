@@ -36,9 +36,8 @@ function validate () {
       return false;
     }
     else {
-      window.open(document.getElementById("J_down").getAttribute("data-link"));
-      document.getElementById("J_codetext").value="";
-      createCode();
+        var loginForm = document.getElementById("loginForm");
+       loginForm.submit();
       return true;
     }
 

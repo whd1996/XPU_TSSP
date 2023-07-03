@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TSSP.web
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class CompanyRegister : System.Web.Mvc.ViewPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
