@@ -1,5 +1,5 @@
 -- 创建数据库
-create database XPU-TSSP;
+create database "XPU-TSSP";
 
 -- 创建企业用户表
 CREATE TABLE Enterprises (
