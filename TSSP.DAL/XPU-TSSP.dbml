@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="XPU-TSSP" Class="XPU_TSSPDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=XPU-TSSP;Integrated Security=True" SettingsObjectName="TSSP.DAL.Properties.Settings" SettingsPropertyName="XPU_TSSPConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Students" Member="Students">
+    <Type Name="Students">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nickname" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Students_Comments" Member="Comments" ThisKey="Id" OtherKey="StudentId" Type="Comments" />
+      <Association Name="Students_CompanyReviews" Member="CompanyReviews" ThisKey="Id" OtherKey="StudentId" Type="CompanyReviews" />
+      <Association Name="Students_InternshipEmploymentExperiences" Member="InternshipEmploymentExperiences" ThisKey="Id" OtherKey="StudentId" Type="InternshipEmploymentExperiences" />
+      <Association Name="Students_InternshipEmploymentReviews" Member="InternshipEmploymentReviews" ThisKey="Id" OtherKey="StudentId" Type="InternshipEmploymentReviews" />
+      <Association Name="Students_InterviewInvitations" Member="InterviewInvitations" ThisKey="Id" OtherKey="StudentId" Type="InterviewInvitations" />
+      <Association Name="Students_PersonalResumes" Member="PersonalResumes" ThisKey="Id" OtherKey="StudentId" Type="PersonalResumes" />
+      <Association Name="Students_ProjectSubmissions" Member="ProjectSubmissions" ThisKey="Id" OtherKey="StudentId" Type="ProjectSubmissions" />
+      <Association Name="Students_Resumes" Member="Resumes" ThisKey="Id" OtherKey="StudentId" Type="Resumes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comments" Member="Comments">
+    <Type Name="Comments">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntityType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EntityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Comments_Comments" Member="Comments2" ThisKey="Id" OtherKey="ParentId" Type="Comments" />
+      <Association Name="Comments_Comments" Member="Comments1" ThisKey="ParentId" OtherKey="Id" Type="Comments" IsForeignKey="true" />
+      <Association Name="Students_Comments" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyProfiles" Member="CompanyProfiles">
+    <Type Name="CompanyProfiles">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnterpriseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IntroductionText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Enterprises_CompanyProfiles" Member="Enterprises" ThisKey="EnterpriseId" OtherKey="Id" Type="Enterprises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyReviews" Member="CompanyReviews">
+    <Type Name="CompanyReviews">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnterpriseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Students_CompanyReviews" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+      <Association Name="Enterprises_CompanyReviews" Member="Enterprises" ThisKey="EnterpriseId" OtherKey="Id" Type="Enterprises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Enterprises" Member="Enterprises">
+    <Type Name="Enterprises">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UnifiedSocialCreditCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactEmail" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactPhone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LogoImage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Enterprises_CompanyProfiles" Member="CompanyProfiles" ThisKey="Id" OtherKey="EnterpriseId" Type="CompanyProfiles" />
+      <Association Name="Enterprises_CompanyReviews" Member="CompanyReviews" ThisKey="Id" OtherKey="EnterpriseId" Type="CompanyReviews" />
+      <Association Name="Enterprises_InternshipEmploymentReviews" Member="InternshipEmploymentReviews" ThisKey="Id" OtherKey="EnterpriseId" Type="InternshipEmploymentReviews" />
+      <Association Name="Enterprises_InterviewInvitations" Member="InterviewInvitations" ThisKey="Id" OtherKey="EnterpriseId" Type="InterviewInvitations" />
+      <Association Name="Enterprises_JobPostings" Member="JobPostings" ThisKey="Id" OtherKey="EnterpriseId" Type="JobPostings" />
+      <Association Name="Enterprises_Projects" Member="Projects" ThisKey="Id" OtherKey="EnterpriseId" Type="Projects" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InternshipEmploymentExperiences" Member="InternshipEmploymentExperiences">
+    <Type Name="InternshipEmploymentExperiences">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExperienceText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Students_InternshipEmploymentExperiences" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InternshipEmploymentReviews" Member="InternshipEmploymentReviews">
+    <Type Name="InternshipEmploymentReviews">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnterpriseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Enterprises_InternshipEmploymentReviews" Member="Enterprises" ThisKey="EnterpriseId" OtherKey="Id" Type="Enterprises" IsForeignKey="true" />
+      <Association Name="Students_InternshipEmploymentReviews" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InterviewInvitations" Member="InterviewInvitations">
+    <Type Name="InterviewInvitations">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnterpriseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Enterprises_InterviewInvitations" Member="Enterprises" ThisKey="EnterpriseId" OtherKey="Id" Type="Enterprises" IsForeignKey="true" />
+      <Association Name="Students_InterviewInvitations" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+      <Association Name="Projects_InterviewInvitations" Member="Projects" ThisKey="ProjectId" OtherKey="Id" Type="Projects" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobPostings" Member="JobPostings">
+    <Type Name="JobPostings">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnterpriseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Salary" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Requirements" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="JobPostings_Resumes" Member="Resumes" ThisKey="Id" OtherKey="JobPostingId" Type="Resumes" />
+      <Association Name="Enterprises_JobPostings" Member="Enterprises" ThisKey="EnterpriseId" OtherKey="Id" Type="Enterprises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PersonalResumes" Member="PersonalResumes">
+    <Type Name="PersonalResumes">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ResumeText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Students_PersonalResumes" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Projects" Member="Projects">
+    <Type Name="Projects">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnterpriseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Requirements" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Projects_InterviewInvitations" Member="InterviewInvitations" ThisKey="Id" OtherKey="ProjectId" Type="InterviewInvitations" />
+      <Association Name="Projects_ProjectSubmissions" Member="ProjectSubmissions" ThisKey="Id" OtherKey="ProjectId" Type="ProjectSubmissions" />
+      <Association Name="Enterprises_Projects" Member="Enterprises" ThisKey="EnterpriseId" OtherKey="Id" Type="Enterprises" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProjectSubmissions" Member="ProjectSubmissions">
+    <Type Name="ProjectSubmissions">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubmissionText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SubmissionImage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SubmissionAttachment" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Projects_ProjectSubmissions" Member="Projects" ThisKey="ProjectId" OtherKey="Id" Type="Projects" IsForeignKey="true" />
+      <Association Name="Students_ProjectSubmissions" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resumes" Member="Resumes">
+    <Type Name="Resumes">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobPostingId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="JobPostings_Resumes" Member="JobPostings" ThisKey="JobPostingId" OtherKey="Id" Type="JobPostings" IsForeignKey="true" />
+      <Association Name="Students_Resumes" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,10 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TSSP.web.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TSSP.web.Register" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>人才服务社交平台登录</title>
-
+    <title>人才服务社交平台注册</title>
     <link href="static/css/login.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="static/lib/jquery/1.9.1/jquery.min.js"></script>
     <script src="static/js/verificationNumbers.js" tppabs="static/js/verificationNumbers.js"></script>
@@ -30,7 +29,7 @@
                     人才服务社交平台
             <i class="tit-bg right"></i>
                 </div>
-                <p>&emsp;&emsp;&emsp;&emsp;&emsp;Talen service social platform</p>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;企业注册</p>
             </div>
             <form id="login">
                 <p class="p user_icon">
@@ -39,10 +38,7 @@
                 <p class="p pwd_icon">
                     <input type="password" placeholder="密码" name="password" autocomplete="off" class="login_txtbx">
                 </p>
-                <p style="color: white" class="">
-                    <input type="radio" name="role" class="login_txtbx" value="0" />企业
-             <input type="radio" name="role" class="login_txtbx" value="1" checked />大学生
-                </p>
+             
                 <div class="p val_icon">
                     <div class="checkcode">
                         <input type="text" id="J_codetext" placeholder="验证码" autocomplete="off" maxlength="4" class="login_txtbx">
@@ -51,8 +47,8 @@
                     <a class="ver_btn" onclick="createCode();" onselectstart="return false">看不清，换一张</a>
                 </div>
                 <div class="signup">
-                    <a style="margin-left: 0px; margin-right: 44px;" class="gv" href="#" onclick="validate()">登&nbsp;&nbsp;录</a>
-                    <a style="margin-left: 35px; margin-right: 0px;" class="gv" href="Register.aspx">注&nbsp;&nbsp;册</a>
+                    <a style="margin-left: 0px; margin-right: 44px;" class="gv" href="#" onclick="validate()">确&nbsp;&nbsp;定</a>
+                    <a style="margin-left: 35px; margin-right: 0px;" class="gv" href="CompanyRegister.aspx">企业注册</a>
                 </div>
             </form>
         </div>

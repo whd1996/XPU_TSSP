@@ -11,7 +11,7 @@ namespace TSSP.web
 {
 
 
-    public partial class Login
+    public partial class CompanyRegister
     {
     }
 }

@@ -88,14 +88,67 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CompanyRegister.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="static\css\login.css" />
+    <Content Include="static\easyui\datagrid-scrollview.js" />
+    <Content Include="static\easyui\easyui-lang-zh_CN.js" />
+    <Content Include="static\easyui\easyui.css" />
+    <Content Include="static\easyui\images\accordion_arrows.png" />
+    <Content Include="static\easyui\images\blank.gif" />
+    <Content Include="static\easyui\images\calendar_arrows.png" />
+    <Content Include="static\easyui\images\combo_arrow.png" />
+    <Content Include="static\easyui\images\datagrid_icons.png" />
+    <Content Include="static\easyui\images\datebox_arrow.png" />
+    <Content Include="static\easyui\images\datebox_arrowf.png" />
+    <Content Include="static\easyui\images\layout_arrows.png" />
+    <Content Include="static\easyui\images\linkbutton_bg.png" />
+    <Content Include="static\easyui\images\loading.gif" />
+    <Content Include="static\easyui\images\menu_arrows.png" />
+    <Content Include="static\easyui\images\messager_icons.png" />
+    <Content Include="static\easyui\images\pagination_icons.png" />
+    <Content Include="static\easyui\images\panel_tools.png" />
+    <Content Include="static\easyui\images\passwordbox_close.png" />
+    <Content Include="static\easyui\images\passwordbox_open.png" />
+    <Content Include="static\easyui\images\searchbox_button.png" />
+    <Content Include="static\easyui\images\slider_handle.png" />
+    <Content Include="static\easyui\images\spinner_arrows.png" />
+    <Content Include="static\easyui\images\tabs_icons.png" />
+    <Content Include="static\easyui\images\tree_icons.png" />
+    <Content Include="static\easyui\images\validatebox_warning.png" />
+    <Content Include="static\easyui\jquery.easyui.min.js" />
+    <Content Include="static\img\2.jpg" />
+    <Content Include="static\img\in_top_bj.png" />
+    <Content Include="static\img\in_top_bj1.jpg" />
+    <Content Include="static\img\log.gif" />
+    <Content Include="static\img\log.png" />
+    <Content Include="static\img\login-tit.png" />
+    <Content Include="static\img\login.png" />
+    <Content Include="static\img\nav_gv.png" />
+    <Content Include="static\img\no.png" />
+    <Content Include="static\img\noimage.jpg" />
+    <Content Include="static\img\radiono.png" />
+    <Content Include="static\img\radioyes.png" />
+    <Content Include="static\img\yes.png" />
+    <Content Include="static\js\myTeXiao.js" />
+    <Content Include="static\js\verificationNumbers.js" />
+    <Content Include="static\lib\jquery\1.9.1\jquery.js" />
+    <Content Include="static\lib\jquery\1.9.1\jquery.min.js" />
     <Content Include="test.txt" />
     <Content Include="Web.config" />
-    <Content Include="数据库创建.sql" />
+    <Content Include="Sql\数据库创建.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CompanyRegister.aspx.cs">
+      <DependentUpon>CompanyRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyRegister.aspx.designer.cs">
+      <DependentUpon>CompanyRegister.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -107,9 +160,15 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -120,8 +179,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TSSP.BLL\TSSP.BLL.csproj">
+      <Project>{f27a706c-a921-47b5-adbd-34f43ee23dca}</Project>
+      <Name>TSSP.BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

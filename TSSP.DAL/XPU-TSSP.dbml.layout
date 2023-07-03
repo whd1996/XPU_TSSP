@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 23.875" name="XPU-TSSP">
+  <DataContextMoniker Name="/XPU_TSSPDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" absoluteBounds="0.75, 9.625, 2, 2.2764815266927094">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/Students" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afe875ce-6e0d-42dc-bfa0-a27d4b6f851d" absoluteBounds="0.765, 10.085, 1.9700000000000002, 1.7164815266927085" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d6c8a954-0ac3-4dba-941b-80e67baaa8b9" absoluteBounds="3.5, 21.25, 2, 1.9068933105468773">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/Comments" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7162c4e-98c8-49d7-b3d7-98d59cfd0b96" absoluteBounds="3.515, 21.71, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b22b3f5-a163-443d-a276-ee15c19313ab" absoluteBounds="4.25, 2.125, 2, 1.3525109863281255">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/CompanyProfiles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73418306-fa54-4884-9c69-e0809b4c9377" absoluteBounds="4.265, 2.585, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8b11c69-bcf6-4c69-85b7-6a4476300e9f" absoluteBounds="6.5, 6.875, 2, 1.7220992024739585">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/CompanyReviews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a1892fc-f070-482d-9731-3c44b51b0b97" absoluteBounds="6.515, 7.335, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3242af38-9254-4b23-adb8-9a6e9c66257e" absoluteBounds="1.5, 1.625, 2, 2.2764815266927085">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/Enterprises" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b530960-33e0-4d40-8e93-dc61fd318756" absoluteBounds="1.5150000000000001, 2.085, 1.9700000000000002, 1.7164815266927085" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="934943b6-af7c-4a19-a325-fca2037e6d73" absoluteBounds="3.5, 7.75, 2, 1.3525109863281246">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/InternshipEmploymentExperiences" />
+      <nestedChildShapes>
+        <elementListCompartment Id="629c1b33-bcfd-4c37-8f0d-6fac8addd148" absoluteBounds="3.515, 8.21, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0927b168-f790-406c-a9b0-7d4994f05334" absoluteBounds="6.5, 12.875, 2, 1.7220992024739594">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/InternshipEmploymentReviews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="769c374c-71f0-485b-994b-6d3d51e86874" absoluteBounds="6.515, 13.335, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf05cf29-23b1-44f3-a3c8-578c5961bd22" absoluteBounds="6.5, 10, 2, 1.5373050944010416">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/InterviewInvitations" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f282999c-e791-4d2d-963f-64e242af24b9" absoluteBounds="6.515, 10.46, 1.9700000000000002, 0.97730509440104174" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ebb0ee3-37cc-47b8-86e4-81e0addda051" absoluteBounds="0.75, 12.875, 2, 1.7220992024739594">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/JobPostings" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80aac263-ce88-42dd-93bb-7f2fe81b880a" absoluteBounds="0.765, 13.335, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be8b1b42-0d08-4a73-9f05-385a7f818e9f" absoluteBounds="3.5, 9.875, 2, 1.3525109863281237">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/PersonalResumes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5946501a-d8b7-40bb-abf2-7a673e281c21" absoluteBounds="3.515, 10.335, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8a7e1e7-fd2d-4422-bcfd-2c22bb5641e9" absoluteBounds="0.75, 4.875, 2, 1.7220992024739577">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/Projects" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80ff4805-0fc4-4f59-86b2-7c8a0685c54e" absoluteBounds="0.765, 5.335, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="98c244de-fbf2-458e-ace7-1a891f1d8fbd" absoluteBounds="3.5, 4.875, 2, 1.9068933105468755">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/ProjectSubmissions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6303b0b7-ae35-41ac-b7bf-2fed5088f3ad" absoluteBounds="3.515, 5.335, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b008d948-95ac-4d3f-ba3c-e503fb1ea5f0" absoluteBounds="3.5, 12.125, 2, 1.3525109863281237">
+      <DataClassMoniker Name="/XPU_TSSPDataContext/Resumes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e70488b-6325-4bdb-afdd-473f0e0c311f" absoluteBounds="3.515, 12.585, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.20772673809345 : 23.1568933105469); (4.20772673809345 : 23.4068933105469); (4.80619103628305 : 23.4068933105469); (4.80619103628305 : 23.1568933105469)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Comments/Comments_Comments" />
+      <nodes>
+        <classShapeMoniker Id="d6c8a954-0ac3-4dba-941b-80e67baaa8b9" />
+        <classShapeMoniker Id="d6c8a954-0ac3-4dba-941b-80e67baaa8b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.73153846153846 : 11.9014815266927); (3.15625 : 12.3261930651542); (3.15625 : 22.2034466552734); (3.5 : 22.2034466552734)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_Comments" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="d6c8a954-0ac3-4dba-941b-80e67baaa8b9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 9.625); (1.75 : 7.28125); (3.10416666666667 : 7.28125 : JumpStart); (3.27083333333333 : 7.28125 : JumpEnd); (3.29166666666667 : 7.28125 : JumpStart); (3.45833333333333 : 7.28125 : JumpEnd); (6.04166666666667 : 7.28125 : JumpStart); (6.45833333333333 : 7.28125 : JumpEnd); (6.5 : 7.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_CompanyReviews" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="e8b11c69-bcf6-4c69-85b7-6a4476300e9f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 2.80125549316406); (4.25 : 2.80125549316406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Enterprises/Enterprises_CompanyProfiles" />
+      <nodes>
+        <classShapeMoniker Id="3242af38-9254-4b23-adb8-9a6e9c66257e" />
+        <classShapeMoniker Id="7b22b3f5-a163-443d-a276-ee15c19313ab" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 3.90148152669271); (3.125 : 7.0468725); (3.29166666666667 : 7.0468725 : JumpStart); (3.45833333333333 : 7.0468725 : JumpEnd); (6.04166666666667 : 7.0468725 : JumpStart); (6.45833333333333 : 7.0468725 : JumpEnd); (6.5 : 7.0468725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Enterprises/Enterprises_CompanyReviews" />
+      <nodes>
+        <classShapeMoniker Id="3242af38-9254-4b23-adb8-9a6e9c66257e" />
+        <classShapeMoniker Id="e8b11c69-bcf6-4c69-85b7-6a4476300e9f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 9.625); (2.2812525 : 8.42625549316406); (3.10416666666667 : 8.42625549316406 : JumpStart); (3.27083333333333 : 8.42625549316406 : JumpEnd); (3.29166666666667 : 8.42625549316406 : JumpStart); (3.45833333333333 : 8.42625549316406 : JumpEnd); (3.5 : 8.42625549316406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_InternshipEmploymentExperiences" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="934943b6-af7c-4a19-a325-fca2037e6d73" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 3.80609591130809); (3.78288561538462 : 4.08898152669271); (6.25 : 4.08898152669271); (6.25 : 12.625); (6.5 : 12.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Enterprises/Enterprises_InternshipEmploymentReviews" />
+      <nodes>
+        <classShapeMoniker Id="3242af38-9254-4b23-adb8-9a6e9c66257e" />
+        <classShapeMoniker Id="0927b168-f790-406c-a9b0-7d4994f05334" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.9014815266927); (3.3125 : 12.4639815266927); (3.3125 : 14.068554594401); (6.5 : 14.068554594401)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_InternshipEmploymentReviews" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="0927b168-f790-406c-a9b0-7d4994f05334" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.46769230769231 : 3.90148152669271); (3.84269230769231 : 4.27648152669271); (6.125 : 4.27648152669271); (6.125 : 9.625); (6.19107443490112 : 9.69107443490112 : JumpStart); (6.30892556509888 : 9.80892556509888 : JumpEnd); (6.5 : 10)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Enterprises/Enterprises_InterviewInvitations" />
+      <nodes>
+        <classShapeMoniker Id="3242af38-9254-4b23-adb8-9a6e9c66257e" />
+        <classShapeMoniker Id="cf05cf29-23b1-44f3-a3c8-578c5961bd22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.4136580403646); (3.29166666666667 : 11.4136580403646 : JumpStart); (3.45833333333333 : 11.4136580403646 : JumpEnd); (6.16666666666667 : 11.4136580403646 : JumpStart); (6.33333333333333 : 11.4136580403646 : JumpEnd); (6.5 : 11.4136580403646)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_InterviewInvitations" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="cf05cf29-23b1-44f3-a3c8-578c5961bd22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.375 : 3.90148152669271); (3.375 : 13.4717772972005); (3.23958333333333 : 13.4717772972005 : JumpStart); (3.07291666666667 : 13.4717772972005 : JumpEnd); (2.75 : 13.4717772972005)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Enterprises/Enterprises_JobPostings" />
+      <nodes>
+        <classShapeMoniker Id="3242af38-9254-4b23-adb8-9a6e9c66257e" />
+        <classShapeMoniker Id="8ebb0ee3-37cc-47b8-86e4-81e0addda051" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.5512554931641); (3.29166666666667 : 10.5512554931641 : JumpStart); (3.45833333333333 : 10.5512554931641 : JumpEnd); (3.5 : 10.5512554931641)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_PersonalResumes" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="be8b1b42-0d08-4a73-9f05-385a7f818e9f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.73604960123698); (3.04166666666667 : 5.73604960123698 : JumpStart); (3.20833333333333 : 5.73604960123698 : JumpEnd); (3.25 : 5.73604960123698); (3.25 : 6.90689331054688); (3.29166666666667 : 6.90689331054687 : JumpStart); (3.45833333333333 : 6.90689331054688 : JumpEnd); (6.04166666666667 : 6.90689331054687 : JumpStart); (6.33333333333333 : 6.90689331054688 : JumpEnd); (6.375 : 6.90689331054688); (6.375 : 8.84709920247396); (7.531252 : 8.84709920247396); (7.531252 : 10)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Projects/Projects_InterviewInvitations" />
+      <nodes>
+        <classShapeMoniker Id="c8a7e1e7-fd2d-4422-bcfd-2c22bb5641e9" />
+        <classShapeMoniker Id="cf05cf29-23b1-44f3-a3c8-578c5961bd22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 3.90148152669271); (2.125 : 4.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Enterprises/Enterprises_Projects" />
+      <nodes>
+        <classShapeMoniker Id="3242af38-9254-4b23-adb8-9a6e9c66257e" />
+        <classShapeMoniker Id="c8a7e1e7-fd2d-4422-bcfd-2c22bb5641e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.24302480061849); (3.04166666666667 : 5.24302480061849 : JumpStart); (3.20833333333333 : 5.24302480061849 : JumpEnd); (3.29166666666667 : 5.24302480061849 : JumpStart); (3.45833333333333 : 5.24302480061849 : JumpEnd); (3.5 : 5.24302480061849)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Projects/Projects_ProjectSubmissions" />
+      <nodes>
+        <classShapeMoniker Id="c8a7e1e7-fd2d-4422-bcfd-2c22bb5641e9" />
+        <classShapeMoniker Id="98c244de-fbf2-458e-ace7-1a891f1d8fbd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.68807592307692); (3.1875 : 9.25057592307692); (3.1875 : 6.25897095589193); (3.29166666666667 : 6.25897095589193 : JumpStart); (3.45833333333333 : 6.25897095589193 : JumpEnd); (3.5 : 6.25897095589193)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_ProjectSubmissions" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="98c244de-fbf2-458e-ace7-1a891f1d8fbd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 13.1108886486003); (3.07291666666667 : 13.1108886486003 : JumpStart); (3.45833333333333 : 13.1108886486003 : JumpEnd); (3.5 : 13.1108886486003)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/JobPostings/JobPostings_Resumes" />
+      <nodes>
+        <classShapeMoniker Id="8ebb0ee3-37cc-47b8-86e4-81e0addda051" />
+        <classShapeMoniker Id="b008d948-95ac-4d3f-ba3c-e503fb1ea5f0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.8522497574619); (3 : 12.1022497574619); (3 : 11.625); (3.31607443490112 : 11.9410744349011 : JumpStart); (3.43392556509888 : 12.0589255650989 : JumpEnd); (3.5 : 12.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/XPU_TSSPDataContext/Students/Students_Resumes" />
+      <nodes>
+        <classShapeMoniker Id="2ce35167-d4c0-4f47-894c-93bb6894f0e6" />
+        <classShapeMoniker Id="b008d948-95ac-4d3f-ba3c-e503fb1ea5f0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
