@@ -44,6 +44,16 @@ function validate() {
 function infoSubmit() {
     var inputCode = document.getElementById("J_codetext").value.toUpperCase();
     var codeToUp = code.toUpperCase();
+    var email = $("#email").val();
+    var pwd1 = document.getElementById("pwd1").value;
+    if (email == null || email === "") {
+        document.getElementById("tishi").innerHTML = "<font color='red'>邮箱号不能为空</font>";
+        return false;
+    }
+    if (pwd1 == null || pwd1 === "") {
+        document.getElementById("tishi").innerHTML = "<font color='red'>密码不能为空</font>";
+        return false;
+    }
     if (inputCode.length <= 0) {
         document.getElementById("J_codetext").setAttribute("placeholder", "输入验证码");
         createCode();
@@ -67,7 +77,6 @@ function pwdValidate() {
     /* 对比两次输入的密码  */
     if (pwd1 == pwd2) {
         document.getElementById("tishi").innerHTML = "<font color='green'>密码输入一致</font>";
-
         $("#submit").attr("disabled", false).css("pointer-events", "auto");
     }
     else {

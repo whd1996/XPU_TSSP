@@ -33,10 +33,10 @@
             </div>
             <form id="registForm" method="post" action="/Login/Register">
                 <p class="p user_icon">
-                    <input type="text" placeholder="邮箱号" name="email" autocomplete="off" class="login_txtbx">
+                    <input type="text" placeholder="邮箱号" id="email" name="email" autocomplete="off" class="login_txtbx" required onkeyup="javascript:pwdValidate()">
                 </p>
                 <p class="p pwd_icon">
-                    <input id="pwd1" type="password" placeholder="密码" name="password" autocomplete="off" class="login_txtbx" onkeyup="javascript:pwdValidate()">
+                    <input id="pwd1" type="password" required placeholder="密码" name="password" autocomplete="off" class="login_txtbx" onkeyup="javascript:pwdValidate()">
                 </p>
                  <p class="p pwd_icon">
                     <input id="pwd2" type="password" placeholder="再次输入密码" autocomplete="off" class="login_txtbx" onkeyup="javascript:pwdValidate()">

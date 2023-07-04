@@ -18,11 +18,6 @@ namespace TSSP.web.Controllers
             ViewBag.Message = "跳转登录页";
             return View();
         }
-        public ActionResult CompanyRegister()
-        {
-            ViewBag.Message = "跳转公司注册页";
-            return View();
-        }
         public ActionResult Register()
         {
             ViewBag.Message = "跳转注册页";

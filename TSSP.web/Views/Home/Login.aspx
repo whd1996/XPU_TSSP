@@ -31,12 +31,12 @@
                 </div>
                 <p>&emsp;&emsp;&emsp;&emsp;&emsp;Talen service social platform</p>
             </div>
-            <form id="loginForm" runat="server">
+            <form id="loginForm" runat="server" method="post" action="/Login/CheckLogin">
                 <p class="p user_icon">
-                    <input type="text" placeholder="邮箱号" name="email" autocomplete="off" class="login_txtbx">
+                    <input type="email" placeholder="邮箱号" name="email" autocomplete="off" class="login_txtbx" required>
                 </p>
                 <p class="p pwd_icon">
-                    <input type="password" placeholder="密码" name="password" autocomplete="off" class="login_txtbx">
+                    <input type="password" placeholder="密码" name="password" autocomplete="off" class="login_txtbx" required>
                 </p>
                 <p style="color: white" class="">
                     <input type="radio" name="role" class="login_txtbx" value="0" />企业
