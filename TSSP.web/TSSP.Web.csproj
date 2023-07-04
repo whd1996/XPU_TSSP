@@ -101,9 +101,53 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sql\dbo.sql" />
-    <Content Include="Sql\数据库创建.sql" />
-    <Content Include="Views\Enterprise\WebForm1.aspx" />
+    <Content Include="static\Assets\css\reset.css" />
+    <Content Include="static\Assets\css\responsive.css" />
+    <Content Include="static\Assets\css\thems.css" />
+    <Content Include="static\Assets\images\bg_a.jpg" />
+    <Content Include="static\Assets\images\bg_b.jpg" />
+    <Content Include="static\Assets\images\bg_c.png" />
+    <Content Include="static\Assets\images\bg_d.png" />
+    <Content Include="static\Assets\images\icon1.png" />
+    <Content Include="static\Assets\images\icon10.png" />
+    <Content Include="static\Assets\images\icon11.png" />
+    <Content Include="static\Assets\images\icon12.png" />
+    <Content Include="static\Assets\images\icon2.png" />
+    <Content Include="static\Assets\images\icon3.png" />
+    <Content Include="static\Assets\images\icon4.png" />
+    <Content Include="static\Assets\images\icon5.png" />
+    <Content Include="static\Assets\images\icon9.png" />
+    <Content Include="static\Assets\images\icon_5.png" />
+    <Content Include="static\Assets\images\icon_5a.png" />
+    <Content Include="static\Assets\images\icon_6.png" />
+    <Content Include="static\Assets\images\icon_6a.png" />
+    <Content Include="static\Assets\images\icon_7.png" />
+    <Content Include="static\Assets\images\icon_7a.png" />
+    <Content Include="static\Assets\images\icon_8.png" />
+    <Content Include="static\Assets\images\icon_8a.png" />
+    <Content Include="static\Assets\images\line_a.png" />
+    <Content Include="static\Assets\images\logo.jpg" />
+    <Content Include="static\Assets\images\logo_b.png" />
+    <Content Include="static\Assets\images\nav_ico.png" />
+    <Content Include="static\Assets\images\pic1.png" />
+    <Content Include="static\Assets\images\pic2.jpg" />
+    <Content Include="static\Assets\images\s_btn.png" />
+    <Content Include="static\Assets\images\tel.png" />
+    <Content Include="static\Assets\js\jquery-1.8.3.min.js" />
+    <Content Include="static\Assets\js\js_z.js" />
+    <Content Include="static\Assets\js\main.js" />
+    <Content Include="static\Assets\upload\banner.jpg" />
+    <Content Include="static\Assets\upload\banner_a.jpg" />
+    <Content Include="static\Assets\upload\map.jpg" />
+    <Content Include="static\Assets\upload\pic1.jpg" />
+    <Content Include="static\Assets\upload\pic2.jpg" />
+    <Content Include="static\Assets\upload\pic3.jpg" />
+    <Content Include="static\Assets\upload\pic4.jpg" />
+    <Content Include="static\Assets\upload\pic5.jpg" />
+    <Content Include="static\Assets\upload\pic6.png" />
+    <Content Include="Views\Enterprise\CompanyProfile.aspx" />
+    <Content Include="Views\Enterprise\Index.aspx" />
+    <Content Include="Views\Home\CompanyRegister.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Home\Login.aspx" />
     <Content Include="Views\Home\Register.aspx" />
@@ -153,15 +197,30 @@
     <Content Include="static\lib\jquery\1.9.1\jquery.min.js" />
     <Content Include="Views\Student\Index.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Sql\数据库创建.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Views\Enterprise\CompanyProfile.aspx.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Enterprise\CompanyProfile.aspx.designer.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Enterprise\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Enterprise\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\CompanyRegister.aspx.cs">
+      <DependentUpon>CompanyRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\CompanyRegister.aspx.designer.cs">
+      <DependentUpon>CompanyRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\EnterpriseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
