@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TSSP.web.Views.Enterprise
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class index : System.Web.Mvc.ViewPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
