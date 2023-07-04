@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<title>视维科技</title>
+<title>首页</title>
 <link rel="stylesheet" type="text/css" href="../../static/Assets/css/reset.css"/>
 <script type="text/javascript" src="../../static/Assets/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../../static/Assets/js/js_z.js"></script>
