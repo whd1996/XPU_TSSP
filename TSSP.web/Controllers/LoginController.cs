@@ -10,7 +10,6 @@ namespace TSSP.web.Controllers
 {
     public class LoginController : Controller
     {
-
         [HttpPost]
         public ActionResult CheckLogin(FormCollection form)
         {
@@ -25,7 +24,9 @@ namespace TSSP.web.Controllers
                     return new HttpStatusCodeResult(401, "企业邮箱或密码错误");          
                 else
                 {
-                    System.Web.HttpContext.Current.Session["enterprise"] = enterprise.Id;
+                    // System.Web.HttpContext.Current.Session["enterprise"] = enterprise.Id;
+                    Session["enterprise"] = enterprise.Id;
+                    Session["logo"] = enterprise.LogoImage;
                     return RedirectToAction("../Enterprise/Index");
                 }
             }

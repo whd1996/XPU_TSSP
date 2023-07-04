@@ -147,6 +147,7 @@
     <Content Include="static\Assets\upload\pic6.png" />
     <Content Include="Views\Enterprise\Index.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="UpdateEnterprise.aspx" />
     <Content Include="Views\Home\Login.aspx" />
     <Content Include="Views\Home\Register.aspx" />
     <Content Include="static\css\login.css" />
@@ -193,12 +194,14 @@
     <Content Include="static\js\verificationNumbers.js" />
     <Content Include="static\lib\jquery\1.9.1\jquery.js" />
     <Content Include="static\lib\jquery\1.9.1\jquery.min.js" />
+    <Content Include="Views\Image\Upload.aspx" />
     <Content Include="Views\Student\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Sql\数据库创建.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Views\Enterprise\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,6 +215,13 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEnterprise.aspx.cs">
+      <DependentUpon>UpdateEnterprise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateEnterprise.aspx.designer.cs">
+      <DependentUpon>UpdateEnterprise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -227,6 +237,13 @@
     </Compile>
     <Compile Include="Views\Home\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Image\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Image\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Student\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

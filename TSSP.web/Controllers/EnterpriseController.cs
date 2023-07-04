@@ -16,7 +16,12 @@ namespace TSSP.web.Controllers
 
         public ActionResult CompanyProfile()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "公司简介页";
+            return View();
+        }
+        public ActionResult UpdateEnterprise()
+        {
+            ViewBag.Message = "企业基本信息修改";
             return View();
         }
     }

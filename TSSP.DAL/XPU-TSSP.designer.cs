@@ -30,12 +30,12 @@ namespace TSSP.DAL
 		
     #region 可扩展性方法定义
     partial void OnCreated();
-    partial void InsertStudents(Students instance);
-    partial void UpdateStudents(Students instance);
-    partial void DeleteStudents(Students instance);
     partial void InsertComments(Comments instance);
     partial void UpdateComments(Comments instance);
     partial void DeleteComments(Comments instance);
+    partial void InsertStudents(Students instance);
+    partial void UpdateStudents(Students instance);
+    partial void DeleteStudents(Students instance);
     partial void InsertCompanyProfiles(CompanyProfiles instance);
     partial void UpdateCompanyProfiles(CompanyProfiles instance);
     partial void DeleteCompanyProfiles(CompanyProfiles instance);
@@ -101,19 +101,19 @@ namespace TSSP.DAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Students> Students
-		{
-			get
-			{
-				return this.GetTable<Students>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Comments> Comments
 		{
 			get
 			{
 				return this.GetTable<Comments>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Students> Students
+		{
+			get
+			{
+				return this.GetTable<Students>();
 			}
 		}
 		
@@ -203,460 +203,6 @@ namespace TSSP.DAL
 			{
 				return this.GetTable<Resumes>();
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Students")]
-	public partial class Students : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _FullName;
-		
-		private string _Nickname;
-		
-		private string _Gender;
-		
-		private string _Email;
-		
-		private string _Phone;
-		
-		private string _Address;
-		
-		private string _Password;
-		
-		private EntitySet<Comments> _Comments;
-		
-		private EntitySet<CompanyReviews> _CompanyReviews;
-		
-		private EntitySet<InternshipEmploymentExperiences> _InternshipEmploymentExperiences;
-		
-		private EntitySet<InternshipEmploymentReviews> _InternshipEmploymentReviews;
-		
-		private EntitySet<InterviewInvitations> _InterviewInvitations;
-		
-		private EntitySet<PersonalResumes> _PersonalResumes;
-		
-		private EntitySet<ProjectSubmissions> _ProjectSubmissions;
-		
-		private EntitySet<Resumes> _Resumes;
-		
-    #region 可扩展性方法定义
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnFullNameChanging(string value);
-    partial void OnFullNameChanged();
-    partial void OnNicknameChanging(string value);
-    partial void OnNicknameChanged();
-    partial void OnGenderChanging(string value);
-    partial void OnGenderChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPhoneChanging(string value);
-    partial void OnPhoneChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    #endregion
-		
-		public Students()
-		{
-			this._Comments = new EntitySet<Comments>(new Action<Comments>(this.attach_Comments), new Action<Comments>(this.detach_Comments));
-			this._CompanyReviews = new EntitySet<CompanyReviews>(new Action<CompanyReviews>(this.attach_CompanyReviews), new Action<CompanyReviews>(this.detach_CompanyReviews));
-			this._InternshipEmploymentExperiences = new EntitySet<InternshipEmploymentExperiences>(new Action<InternshipEmploymentExperiences>(this.attach_InternshipEmploymentExperiences), new Action<InternshipEmploymentExperiences>(this.detach_InternshipEmploymentExperiences));
-			this._InternshipEmploymentReviews = new EntitySet<InternshipEmploymentReviews>(new Action<InternshipEmploymentReviews>(this.attach_InternshipEmploymentReviews), new Action<InternshipEmploymentReviews>(this.detach_InternshipEmploymentReviews));
-			this._InterviewInvitations = new EntitySet<InterviewInvitations>(new Action<InterviewInvitations>(this.attach_InterviewInvitations), new Action<InterviewInvitations>(this.detach_InterviewInvitations));
-			this._PersonalResumes = new EntitySet<PersonalResumes>(new Action<PersonalResumes>(this.attach_PersonalResumes), new Action<PersonalResumes>(this.detach_PersonalResumes));
-			this._ProjectSubmissions = new EntitySet<ProjectSubmissions>(new Action<ProjectSubmissions>(this.attach_ProjectSubmissions), new Action<ProjectSubmissions>(this.detach_ProjectSubmissions));
-			this._Resumes = new EntitySet<Resumes>(new Action<Resumes>(this.attach_Resumes), new Action<Resumes>(this.detach_Resumes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string FullName
-		{
-			get
-			{
-				return this._FullName;
-			}
-			set
-			{
-				if ((this._FullName != value))
-				{
-					this.OnFullNameChanging(value);
-					this.SendPropertyChanging();
-					this._FullName = value;
-					this.SendPropertyChanged("FullName");
-					this.OnFullNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nickname", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nickname
-		{
-			get
-			{
-				return this._Nickname;
-			}
-			set
-			{
-				if ((this._Nickname != value))
-				{
-					this.OnNicknameChanging(value);
-					this.SendPropertyChanging();
-					this._Nickname = value;
-					this.SendPropertyChanged("Nickname");
-					this.OnNicknameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string Gender
-		{
-			get
-			{
-				return this._Gender;
-			}
-			set
-			{
-				if ((this._Gender != value))
-				{
-					this.OnGenderChanging(value);
-					this.SendPropertyChanging();
-					this._Gender = value;
-					this.SendPropertyChanged("Gender");
-					this.OnGenderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this.OnPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_Comments", Storage="_Comments", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<Comments> Comments
-		{
-			get
-			{
-				return this._Comments;
-			}
-			set
-			{
-				this._Comments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_CompanyReviews", Storage="_CompanyReviews", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<CompanyReviews> CompanyReviews
-		{
-			get
-			{
-				return this._CompanyReviews;
-			}
-			set
-			{
-				this._CompanyReviews.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_InternshipEmploymentExperiences", Storage="_InternshipEmploymentExperiences", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<InternshipEmploymentExperiences> InternshipEmploymentExperiences
-		{
-			get
-			{
-				return this._InternshipEmploymentExperiences;
-			}
-			set
-			{
-				this._InternshipEmploymentExperiences.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_InternshipEmploymentReviews", Storage="_InternshipEmploymentReviews", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<InternshipEmploymentReviews> InternshipEmploymentReviews
-		{
-			get
-			{
-				return this._InternshipEmploymentReviews;
-			}
-			set
-			{
-				this._InternshipEmploymentReviews.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_InterviewInvitations", Storage="_InterviewInvitations", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<InterviewInvitations> InterviewInvitations
-		{
-			get
-			{
-				return this._InterviewInvitations;
-			}
-			set
-			{
-				this._InterviewInvitations.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_PersonalResumes", Storage="_PersonalResumes", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<PersonalResumes> PersonalResumes
-		{
-			get
-			{
-				return this._PersonalResumes;
-			}
-			set
-			{
-				this._PersonalResumes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_ProjectSubmissions", Storage="_ProjectSubmissions", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<ProjectSubmissions> ProjectSubmissions
-		{
-			get
-			{
-				return this._ProjectSubmissions;
-			}
-			set
-			{
-				this._ProjectSubmissions.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_Resumes", Storage="_Resumes", ThisKey="Id", OtherKey="StudentId")]
-		public EntitySet<Resumes> Resumes
-		{
-			get
-			{
-				return this._Resumes;
-			}
-			set
-			{
-				this._Resumes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Comments(Comments entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_Comments(Comments entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
-		}
-		
-		private void attach_CompanyReviews(CompanyReviews entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_CompanyReviews(CompanyReviews entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
-		}
-		
-		private void attach_InternshipEmploymentExperiences(InternshipEmploymentExperiences entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_InternshipEmploymentExperiences(InternshipEmploymentExperiences entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
-		}
-		
-		private void attach_InternshipEmploymentReviews(InternshipEmploymentReviews entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_InternshipEmploymentReviews(InternshipEmploymentReviews entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
-		}
-		
-		private void attach_InterviewInvitations(InterviewInvitations entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_InterviewInvitations(InterviewInvitations entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
-		}
-		
-		private void attach_PersonalResumes(PersonalResumes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_PersonalResumes(PersonalResumes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
-		}
-		
-		private void attach_ProjectSubmissions(ProjectSubmissions entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_ProjectSubmissions(ProjectSubmissions entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
-		}
-		
-		private void attach_Resumes(Resumes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = this;
-		}
-		
-		private void detach_Resumes(Resumes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Students = null;
 		}
 	}
 	
@@ -952,6 +498,460 @@ namespace TSSP.DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Students")]
+	public partial class Students : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _FullName;
+		
+		private string _Nickname;
+		
+		private string _Gender;
+		
+		private string _Email;
+		
+		private string _Phone;
+		
+		private string _Address;
+		
+		private string _Password;
+		
+		private EntitySet<Comments> _Comments;
+		
+		private EntitySet<CompanyReviews> _CompanyReviews;
+		
+		private EntitySet<InternshipEmploymentExperiences> _InternshipEmploymentExperiences;
+		
+		private EntitySet<InternshipEmploymentReviews> _InternshipEmploymentReviews;
+		
+		private EntitySet<InterviewInvitations> _InterviewInvitations;
+		
+		private EntitySet<PersonalResumes> _PersonalResumes;
+		
+		private EntitySet<ProjectSubmissions> _ProjectSubmissions;
+		
+		private EntitySet<Resumes> _Resumes;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnFullNameChanging(string value);
+    partial void OnFullNameChanged();
+    partial void OnNicknameChanging(string value);
+    partial void OnNicknameChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    #endregion
+		
+		public Students()
+		{
+			this._Comments = new EntitySet<Comments>(new Action<Comments>(this.attach_Comments), new Action<Comments>(this.detach_Comments));
+			this._CompanyReviews = new EntitySet<CompanyReviews>(new Action<CompanyReviews>(this.attach_CompanyReviews), new Action<CompanyReviews>(this.detach_CompanyReviews));
+			this._InternshipEmploymentExperiences = new EntitySet<InternshipEmploymentExperiences>(new Action<InternshipEmploymentExperiences>(this.attach_InternshipEmploymentExperiences), new Action<InternshipEmploymentExperiences>(this.detach_InternshipEmploymentExperiences));
+			this._InternshipEmploymentReviews = new EntitySet<InternshipEmploymentReviews>(new Action<InternshipEmploymentReviews>(this.attach_InternshipEmploymentReviews), new Action<InternshipEmploymentReviews>(this.detach_InternshipEmploymentReviews));
+			this._InterviewInvitations = new EntitySet<InterviewInvitations>(new Action<InterviewInvitations>(this.attach_InterviewInvitations), new Action<InterviewInvitations>(this.detach_InterviewInvitations));
+			this._PersonalResumes = new EntitySet<PersonalResumes>(new Action<PersonalResumes>(this.attach_PersonalResumes), new Action<PersonalResumes>(this.detach_PersonalResumes));
+			this._ProjectSubmissions = new EntitySet<ProjectSubmissions>(new Action<ProjectSubmissions>(this.attach_ProjectSubmissions), new Action<ProjectSubmissions>(this.detach_ProjectSubmissions));
+			this._Resumes = new EntitySet<Resumes>(new Action<Resumes>(this.attach_Resumes), new Action<Resumes>(this.detach_Resumes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="VarChar(20)")]
+		public string FullName
+		{
+			get
+			{
+				return this._FullName;
+			}
+			set
+			{
+				if ((this._FullName != value))
+				{
+					this.OnFullNameChanging(value);
+					this.SendPropertyChanging();
+					this._FullName = value;
+					this.SendPropertyChanged("FullName");
+					this.OnFullNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nickname", DbType="VarChar(20)")]
+		public string Nickname
+		{
+			get
+			{
+				return this._Nickname;
+			}
+			set
+			{
+				if ((this._Nickname != value))
+				{
+					this.OnNicknameChanging(value);
+					this.SendPropertyChanging();
+					this._Nickname = value;
+					this.SendPropertyChanged("Nickname");
+					this.OnNicknameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(4)")]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(20)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_Comments", Storage="_Comments", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<Comments> Comments
+		{
+			get
+			{
+				return this._Comments;
+			}
+			set
+			{
+				this._Comments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_CompanyReviews", Storage="_CompanyReviews", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<CompanyReviews> CompanyReviews
+		{
+			get
+			{
+				return this._CompanyReviews;
+			}
+			set
+			{
+				this._CompanyReviews.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_InternshipEmploymentExperiences", Storage="_InternshipEmploymentExperiences", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<InternshipEmploymentExperiences> InternshipEmploymentExperiences
+		{
+			get
+			{
+				return this._InternshipEmploymentExperiences;
+			}
+			set
+			{
+				this._InternshipEmploymentExperiences.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_InternshipEmploymentReviews", Storage="_InternshipEmploymentReviews", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<InternshipEmploymentReviews> InternshipEmploymentReviews
+		{
+			get
+			{
+				return this._InternshipEmploymentReviews;
+			}
+			set
+			{
+				this._InternshipEmploymentReviews.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_InterviewInvitations", Storage="_InterviewInvitations", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<InterviewInvitations> InterviewInvitations
+		{
+			get
+			{
+				return this._InterviewInvitations;
+			}
+			set
+			{
+				this._InterviewInvitations.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_PersonalResumes", Storage="_PersonalResumes", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<PersonalResumes> PersonalResumes
+		{
+			get
+			{
+				return this._PersonalResumes;
+			}
+			set
+			{
+				this._PersonalResumes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_ProjectSubmissions", Storage="_ProjectSubmissions", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<ProjectSubmissions> ProjectSubmissions
+		{
+			get
+			{
+				return this._ProjectSubmissions;
+			}
+			set
+			{
+				this._ProjectSubmissions.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_Resumes", Storage="_Resumes", ThisKey="Id", OtherKey="StudentId")]
+		public EntitySet<Resumes> Resumes
+		{
+			get
+			{
+				return this._Resumes;
+			}
+			set
+			{
+				this._Resumes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Comments(Comments entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_Comments(Comments entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+		
+		private void attach_CompanyReviews(CompanyReviews entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_CompanyReviews(CompanyReviews entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+		
+		private void attach_InternshipEmploymentExperiences(InternshipEmploymentExperiences entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_InternshipEmploymentExperiences(InternshipEmploymentExperiences entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+		
+		private void attach_InternshipEmploymentReviews(InternshipEmploymentReviews entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_InternshipEmploymentReviews(InternshipEmploymentReviews entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+		
+		private void attach_InterviewInvitations(InterviewInvitations entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_InterviewInvitations(InterviewInvitations entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+		
+		private void attach_PersonalResumes(PersonalResumes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_PersonalResumes(PersonalResumes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+		
+		private void attach_ProjectSubmissions(ProjectSubmissions entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_ProjectSubmissions(ProjectSubmissions entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+		
+		private void attach_Resumes(Resumes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = this;
+		}
+		
+		private void detach_Resumes(Resumes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Students = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CompanyProfiles")]
 	public partial class CompanyProfiles : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -963,6 +963,8 @@ namespace TSSP.DAL
 		private int _EnterpriseId;
 		
 		private string _IntroductionText;
+		
+		private string _IntroductionImage;
 		
 		private EntityRef<Enterprises> _Enterprises;
 		
@@ -976,6 +978,8 @@ namespace TSSP.DAL
     partial void OnEnterpriseIdChanged();
     partial void OnIntroductionTextChanging(string value);
     partial void OnIntroductionTextChanged();
+    partial void OnIntroductionImageChanging(string value);
+    partial void OnIntroductionImageChanged();
     #endregion
 		
 		public CompanyProfiles()
@@ -1044,6 +1048,26 @@ namespace TSSP.DAL
 					this._IntroductionText = value;
 					this.SendPropertyChanged("IntroductionText");
 					this.OnIntroductionTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IntroductionImage", DbType="VarChar(MAX)")]
+		public string IntroductionImage
+		{
+			get
+			{
+				return this._IntroductionImage;
+			}
+			set
+			{
+				if ((this._IntroductionImage != value))
+				{
+					this.OnIntroductionImageChanging(value);
+					this.SendPropertyChanging();
+					this._IntroductionImage = value;
+					this.SendPropertyChanged("IntroductionImage");
+					this.OnIntroductionImageChanged();
 				}
 			}
 		}
@@ -1430,7 +1454,7 @@ namespace TSSP.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnifiedSocialCreditCode", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnifiedSocialCreditCode", DbType="VarChar(50)")]
 		public string UnifiedSocialCreditCode
 		{
 			get
@@ -1450,7 +1474,7 @@ namespace TSSP.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CompanyName", DbType="VarChar(40)")]
 		public string CompanyName
 		{
 			get
@@ -1470,7 +1494,7 @@ namespace TSSP.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactEmail", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactEmail", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
 		public string ContactEmail
 		{
 			get
@@ -1490,7 +1514,7 @@ namespace TSSP.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPhone", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactPhone", DbType="VarChar(20)")]
 		public string ContactPhone
 		{
 			get
@@ -1510,7 +1534,7 @@ namespace TSSP.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50)")]
 		public string Address
 		{
 			get
@@ -1530,7 +1554,7 @@ namespace TSSP.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
 		public string Password
 		{
 			get
@@ -2476,7 +2500,7 @@ namespace TSSP.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Position", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
 		public string Position
 		{
 			get

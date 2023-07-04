@@ -11,25 +11,27 @@
 <link rel="stylesheet" type="text/css" href="../../static/Assets/css/reset.css"/>
 <script type="text/javascript" src="../../static/Assets/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../../static/Assets/js/js_z.js"></script>
-<link rel="stylesheet" type="text/css" href="../../static/Assets/plugins/FlexSlider/flexslider.css">
-<script type="text/javascript" src="../../static/Assets/plugins/FlexSlider/jquery.flexslider.js"></script>
+    <%--<link rel="stylesheet" type="text/css" href="../../static/Assets/plugins/FlexSlider/flexslider.css">--%><%--<script type="text/javascript" src="../../static/Assets/plugins/FlexSlider/jquery.flexslider.js"></script>--%>
 <script type="text/javascript" src="../../static/Assets/js/main.js"></script>
-<link rel="stylesheet" type="text/css" href="../../static/Assets/css/thems.css">
-<link rel="stylesheet" type="text/css" href="../../static/Assets/css/responsive.css">
+<link rel="stylesheet" type="text/css" href="../../static/Assets/css/thems.css"/>
+<link rel="stylesheet" type="text/css" href="../../static/Assets/css/responsive.css"/>
 <script language="javascript">
-    $(window).load(function () {
-        $('.flexslider').flexslider({
-            animation: "slide"
-        });
-    });
+    //$(window).load(function () {
+    //    $('.flexslider').flexslider({
+    //        animation: "slide"
+    //    });
+    //});
 </script>
 </head>
 
 <body>
+    <form id="form1" runat="server">
 <!--头部-->
 <div class="header">
     <div class="head clearfix">
-        <div class="logo"><a href=""><img src="../../static/Assets/images/logo.jpg" alt="视维科技"/></a></div>
+        <div class="logo">
+            <asp:ImageButton ID="LogoImageButton" runat="server"/>
+        </div>
         <ul class="nav clearfix">
             <li class="now"><a href="/Enterprise/Index">首页</a></li>
             <li><a href="/Enterprise/CompanyProfile">企业简介</a></li>
@@ -61,7 +63,8 @@
         <div class="flexslider">
           <ul class="slides">
             <li>
-                <img src="../../static/Assets/upload/banner.jpg" alt="" />
+                <%--<img src="../../static/Assets/upload/banner.jpg" alt="" />--%>
+                <asp:Image ID="IntroductionImage" runat="server" />
             </li>
           </ul>
         </div>
@@ -255,13 +258,13 @@
 <div class="space_hx">&nbsp;</div>
 <div class="join">
 	<div class="bg bg_a"><img src="../../static/Assets/images/pic2.jpg" alt=""/></div>
-    <div class="wen"><a href=""><img src="../../static/Assets/images/pic1.png" alt=""/></a></div>
+    <div class="wen"><a href="#"><img src="../../static/Assets/images/pic1.png" alt=""/></a></div>
     <div class="bg bg_b"><img src="../../static/Assets/images/bg_c.png" alt=""/></div>
 </div>
 <div class="f_bg">
 	<div class="f_m clearfix">
-    	<div class="f_logo"><a href=""><img src="../../static/Assets/images/logo_b.png" alt=""/></a></div>
-        <div class="code"><img src="../../static/Assets/upload/code.png" alt=""/></div>
+    	<div class="f_logo"><a href="#"><img src="../../static/Assets/images/logo_b.png" alt=""/></a></div>
+        <%-- <div class="code"><img src="../../static/Assets/upload/code.png" alt=""/></div>--%>
         <div class="f_mr">
         	<div class="line">&nbsp;</div>
             <div class="space_hx">&nbsp;</div>
@@ -282,5 +285,6 @@
         </div>
     </div>
 </div>
+    </form>
 </body>
 </html>
