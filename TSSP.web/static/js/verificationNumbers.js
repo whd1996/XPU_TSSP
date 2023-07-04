@@ -67,10 +67,11 @@ function pwdValidate() {
     /* 对比两次输入的密码  */
     if (pwd1 == pwd2) {
         document.getElementById("tishi").innerHTML = "<font color='green'>密码输入一致</font>";
-        document.getElementById("submit").disabled = false;
+
+        $("#submit").attr("disabled", false).css("pointer-events", "auto");
     }
     else {
+        $("#submit").attr("disabled", true).css("pointer-events", "none");
         document.getElementById("tishi").innerHTML = "<font color='red'>两次密码输入不一致</font>";
-        document.getElementById("submit").disabled = true;
     }
 }

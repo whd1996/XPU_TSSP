@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Enterprise\WebForm1.aspx" />
     <Content Include="Views\Home\CompanyRegister.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Home\Login.aspx" />
@@ -155,6 +156,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Views\Enterprise\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Enterprise\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\CompanyRegister.aspx.cs">
       <DependentUpon>CompanyRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,7 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Enterprise\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TSSP.BLL\TSSP.BLL.csproj">
