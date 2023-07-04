@@ -4,10 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>人才服务社交平台登录</title>
-
-    <link href="static/css/login.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="static/lib/jquery/1.9.1/jquery.min.js"></script>
-    <script src="static/js/verificationNumbers.js" tppabs="static/js/verificationNumbers.js"></script>
+    <link href="../../static/css/login.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../static/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../../static/js/verificationNumbers.js" tppabs="../../static/js/verificationNumbers.js"></script>
     <style>
         .J_codeimg {
             z-index: -1;
@@ -32,7 +31,7 @@
                 </div>
                 <p>&emsp;&emsp;&emsp;&emsp;&emsp;Talen service social platform</p>
             </div>
-            <form id="loginForm" method="post" action="/Login/CheckLogin">
+            <form id="loginForm" runat="server">
                 <p class="p user_icon">
                     <input type="text" placeholder="邮箱号" name="email" autocomplete="off" class="login_txtbx">
                 </p>
@@ -52,7 +51,7 @@
                 </div>
                 <div class="signup">
                     <a style="margin-left: 0px; margin-right: 44px;" class="gv" href="#" onclick="validate()">登&nbsp;&nbsp;录</a>
-                    <a style="margin-left: 35px; margin-right: 0px;" class="gv" href="Register.aspx">注&nbsp;&nbsp;册</a>
+                    <a style="margin-left: 35px; margin-right: 0px;" class="gv" href="/Home/Register">注&nbsp;&nbsp;册</a>
                 </div>
             </form>
         </div>
@@ -60,7 +59,7 @@
         <canvas id="canvas"></canvas>
     </div>
     <%-- 宇宙特效--%>
-    <script src="static/js/myTeXiao.js"></script>
+    <script src="../../static/js/myTeXiao.js"></script>
 
 </body>
 </html>

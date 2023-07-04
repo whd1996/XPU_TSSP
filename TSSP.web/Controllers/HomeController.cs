@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LX_one_26.Controllers
+namespace TSSP.web.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,17 +15,17 @@ namespace LX_one_26.Controllers
 
         public ActionResult Login()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "跳转登录页";
             return View();
         }
         public ActionResult CompanyRegister()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "跳转公司注册页";
             return View();
         }
         public ActionResult Register()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "跳转注册页";
             return View();
         }
     }

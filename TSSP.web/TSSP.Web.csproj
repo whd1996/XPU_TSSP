@@ -184,7 +184,6 @@
     <Compile Include="Views\Home\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ValuesController1.cs" />
     <Compile Include="Views\Student\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -196,7 +195,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Views\web.config" />
-    <Content Include="Views\Enterprise\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -206,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Enterprise\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TSSP.BLL\TSSP.BLL.csproj">
