@@ -29,7 +29,7 @@
                     人才服务社交平台
             <i class="tit-bg right"></i>
                 </div>
-                <p>&emsp;&emsp;&emsp;&emsp;&emsp;大学生注册</p>
+                <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;注册</p>
             </div>
             <form id="registForm" method="post" action="/Login/Register">
                 <p class="p user_icon">
@@ -39,9 +39,13 @@
                     <input id="pwd1" type="password" placeholder="密码" name="password" autocomplete="off" class="login_txtbx" onkeyup="javascript:pwdValidate()">
                 </p>
                  <p class="p pwd_icon">
-                    <input id="pwd2" type="password" placeholder="再次输入密码" name="password" autocomplete="off" class="login_txtbx" onkeyup="javascript:pwdValidate()">
+                    <input id="pwd2" type="password" placeholder="再次输入密码" autocomplete="off" class="login_txtbx" onkeyup="javascript:pwdValidate()">
                 </p>
                  <div id="tishi" ><span></span></div>
+                   <p style="color: white" class="">
+                    <input type="radio" name="role" class="login_txtbx" value="0" />企业
+                    <input type="radio" name="role" class="login_txtbx" value="1" checked />大学生
+                </p>
                 <div class="p val_icon">
                     <div class="checkcode">
                         <input type="text" id="J_codetext" placeholder="验证码" autocomplete="off" maxlength="4" class="login_txtbx">
@@ -52,7 +56,7 @@
                 <div class="signup">
                     <a id="submit" style="margin-left: 0px; margin-right: 44px;" class="gv" href="#" onclick="infoSubmit()">
                         确&nbsp;&nbsp;定</a>
-                    <a style="margin-left: 35px; margin-right: 0px;" class="gv" href="/Home/CompanyRegister">企业注册</a>
+                    <a style="margin-left: 35px; margin-right: 0px;" class="gv" href="/Home/Login">前去登录</a>
                 </div>
             </form>
         </div>
