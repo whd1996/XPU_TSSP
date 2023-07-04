@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanyProfile.aspx.cs" Inherits="TSSP.web.Views.Enterprise.CompanyPprofile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanyProfile.aspx.cs" Inherits="TSSP.web.Views.Enterprise.Companyprofile" %>
 
 <!DOCTYPE html>
 
@@ -8,13 +8,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-<title>关于我们</title>
+<title>公司简介</title>
 <link rel="stylesheet" type="text/css" href="../../static/Assets/css/reset.css"/>
 <script type="text/javascript" src="../../static/Assets/js/jquery-1.8.3.min.js"></script>
-<script src="../../static/../../static/Assets/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../../static/Assets/js/js_z.js"></script>
-<link rel="stylesheet" type="text/css" href="../../static/Assets/plugins/FlexSlider/flexslider.css"/>
-<script type="text/javascript" src="../../static/Assets/plugins/FlexSlider/jquery.flexslider.js"></script>
 <script type="text/javascript" src="../../static/Assets/js/main.js"></script>
 <link rel="stylesheet" type="text/css" href="../../static/Assets/css/thems.css"/>
 <link rel="stylesheet" type="text/css" href="../../static/Assets/css/responsive.css"/>
@@ -28,10 +25,14 @@ $(window).load(function() {
 </head>
 
 <body>
+    <form id="form1" runat="server">
 <!--头部-->
 <div class="header">
     <div class="head clearfix">
-        <div class="logo"><a href=""><img src="../../static/Assets/images/logo.jpg" alt="视维科技"/></a></div>
+        <%-- <div class="logo"><a href=""><img src="../../static/Assets/images/logo.jpg" alt="视维科技"/></a></div>--%>
+        <div class="logo">
+            <asp:ImageButton ID="LogoImageButton" runat="server"/>
+        </div>
         <ul class="nav clearfix">
              <li ><a href="/Enterprise/Index">首页</a></li>
             <li class="now"><a href="/Enterprise/CompanyProfile">企业简介</a></li>
@@ -67,9 +68,10 @@ $(window).load(function() {
         	<span>公司简介</span>
             <i>&nbsp;</i>
         </div>
+      
         <ul class="s_nav">
-        	<li><a href="">企业文化</a><i>&nbsp;</i></li>
-            <li><a href="">发展历程</a><i>&nbsp;</i></li>
+        	<li><a href="/pages/UpdateEnterprise">修改信息</a><i>&nbsp;</i></li>
+            <li><a href="">修改简介</a><i>&nbsp;</i></li>
             <li><a href="">资质荣誉</a><i>&nbsp;</i></li>
             <li><a href="">合作伙伴</a><i>&nbsp;</i></li>
         </ul>
@@ -78,14 +80,22 @@ $(window).load(function() {
     	<div class="head">公司简介<em>COMPANY PROFILE</em></div>
         <div class="s_ctn">
         	<div class="about">
-            	<img src="../../static/Assets/upload/pic5.jpg" alt=""/>
-                <div class="space_hx">&nbsp;</div>
+            <%--	<img src="../../static/Assets/upload/pic5.jpg" alt=""/>--%>
+                 <asp:Image ID="IntroductionImage" runat="server" />
+                <div class="space_hx">&&nbsp;</div>
+            
                 <div style="border-top:1px solid #ddd; padding-top:30px; font-size:14px; color:#777;">
-                	<h1 style="font-size:24px; color:#333333; font-weight:normal;">视维科技</h1>
-                	<p style="margin-top:50px; text-indent:2em;">深圳市视维科技有限公司成立于2004年，是全球智能数字终端产品、应用服务软件以及视频服务系统的主要提供商之一，是集研发、生产、销售于一体的软件企业和高新技术企业。</p>
-                    <p style="margin-top:50px; text-indent:2em;">视维科技成立至今，成功研发了全系列的数字电视机顶盒产品，销售覆盖全球五十多个国家，并在海外设立办事处，积极拓展全球市场，成为中东、欧洲、非洲、美洲、澳大利亚等五十多个国家和地区的数字电视机顶盒及相关终端产品的主要供应商，同时，视维科技拥有自己的统一开发平台、能够进行快速实施产品开发和投放市场、能够为客户提供综合性视频端到端解决方案的企业。</p>
-                    <p style="margin-top:50px; text-indent:2em;">目前，视维科技拥有员工近400人，组建了一支极具敬业、创造和进取精神的高素质管理团队。公司的研发团队是一大批具有多年从事数字视讯产品开发经验的行业顶尖人才，包括各种获得专业资格认证的硬件、软件高级工程师与工程技术人员，其中3位还曾荣获国家广电部和科技部的科学技术奖。公司在产品设计、项目管理、软件开发等方面具有雄厚的技术实力和丰富的实践经验。</p>
-                    <p style="margin-top:50px; text-indent:2em;">视维科技秉承“科技以人为本”的理念，以高科技为依托，良好的运营模式和服务质量为基石，坚持以最先进的技术、最稳定的性能和最优质的质量服务于广大用户。我们致力于使“视维科技”（SOWELL）成为数字电视领域内最有影响力的品牌，让越来越多的人享受到数字电视带来的乐趣。 </p>
+                	<h1 style="font-size:24px; color:#333333; font-weight:normal;">
+                        <asp:Label ID="ENamelabel" runat="server" Text="公司名称"></asp:Label>
+                    </h1>
+               <p style="margin-top:50px; text-indent:2em;">
+                   <asp:TextBox style="overflow:hidden" ID="CompanyTbx" runat="server" 
+                       BorderStyle="None" ReadOnly="True" TextMode="MultiLine" Height="339px" Width="938px">公司简介
+
+
+                   </asp:TextBox>
+               </p>
+
                 </div>
             </div>
         </div>
@@ -103,7 +113,7 @@ $(window).load(function() {
         <div class="f_mr">
         	<div class="line">&nbsp;</div>
             <div class="space_hx">&nbsp;</div>
-            <span class="tl">联系我们</span>
+            <span class="tl">联系我们/span>
             <div class="num">
             	<a href=""><img src="../../static/Assets/images/icon9.png" alt=""/></a>
                 <a href=""><img src="../../static/Assets/images/icon10.png" alt=""/></a>
@@ -120,5 +130,6 @@ $(window).load(function() {
         </div>
     </div>
 </div>
+    </form>
 </body>
 </html>

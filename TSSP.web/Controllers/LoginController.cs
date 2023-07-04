@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using TSSP.BLL;
 using TSSP.DAL;
-
 namespace TSSP.web.Controllers
 {
     public class LoginController : Controller
@@ -25,9 +24,8 @@ namespace TSSP.web.Controllers
                 else
                 {
                     // System.Web.HttpContext.Current.Session["enterprise"] = enterprise.Id;
-                    Session["enterprise"] = enterprise.Id;
-                    Session["logo"] = enterprise.LogoImage;
-                    return RedirectToAction("../Enterprise/Index");
+                    Session["enterprise"] = enterprise.Id;     
+                    return Redirect("/Enterprise/Index");
                 }
             }
             else {
@@ -36,8 +34,7 @@ namespace TSSP.web.Controllers
                     //HttpContext.Current.Session[key] = value;
                     //System.Web.HttpContext.Current.Session["student"] = stu.Id;
                     Session["student"]= stu.Id;
-                    Session["username"] = stu.Nickname;
-                    return RedirectToAction("../Student/Index");
+                    return Redirect("/Student/Index");
                 }
                 return new HttpStatusCodeResult(401, "大学生邮箱号或密码错误");
             }
@@ -63,7 +60,7 @@ namespace TSSP.web.Controllers
                 //添加企业
                 es.addEnterprise(enterprise);
                 //跳转到登录页面
-                return RedirectToAction("../Home/Login");
+                return Redirect("/Home/Login");
             }
             else
             {
@@ -74,7 +71,7 @@ namespace TSSP.web.Controllers
                 stu.Email = email;
                 stu.Password = password;
                 ss.addStudent(stu);
-                return RedirectToAction("../Home/Login");
+                return Redirect("/Home/Login");
             }
 
         }
