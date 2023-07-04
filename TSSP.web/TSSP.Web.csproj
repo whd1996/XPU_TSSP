@@ -145,6 +145,7 @@
     <Content Include="static\Assets\upload\pic4.jpg" />
     <Content Include="static\Assets\upload\pic5.jpg" />
     <Content Include="static\Assets\upload\pic6.png" />
+    <Content Include="Views\Enterprise\CompanyProfile.aspx" />
     <Content Include="Views\Enterprise\Index.aspx" />
     <Content Include="Views\Home\CompanyRegister.aspx" />
     <Content Include="Global.asax" />
@@ -200,6 +201,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Views\Enterprise\CompanyProfile.aspx.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Enterprise\CompanyProfile.aspx.designer.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Enterprise\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
