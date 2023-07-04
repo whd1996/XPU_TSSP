@@ -15,7 +15,7 @@ namespace TSSP.BLL
        
         public Students selectStudentByEmail(string email)
         {
-            Students student = (from s in db.Students where s.Email == email select s).First();
+            Students student = (from s in db.Students where s.Email == email select s).FirstOrDefault();
             return student;
         }
     }

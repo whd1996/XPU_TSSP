@@ -101,6 +101,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sql\dbo.sql" />
+    <Content Include="Sql\数据库创建.sql" />
     <Content Include="Views\Enterprise\WebForm1.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Home\Login.aspx" />
@@ -151,7 +153,6 @@
     <Content Include="static\lib\jquery\1.9.1\jquery.min.js" />
     <Content Include="Views\Student\Index.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Sql\数据库创建.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

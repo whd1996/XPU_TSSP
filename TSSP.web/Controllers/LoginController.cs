@@ -55,7 +55,7 @@ namespace TSSP.web.Controllers
             {
                 Enterprises dbEnterprise = es.selectEnterpriseByEmail(email);
                 if(dbEnterprise!=null)
-                    return new HttpStatusCodeResult(401, "企业邮箱号已被使用！");
+                    return new HttpStatusCodeResult(401, "该企业邮箱号已被使用！");
                 Enterprises enterprise = new Enterprises();
                 enterprise.Password = password;
                 enterprise.ContactEmail = email;

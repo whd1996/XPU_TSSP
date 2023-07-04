@@ -14,7 +14,7 @@ namespace TSSP.BLL
         }
         public Enterprises selectEnterpriseByEmail(string email)
         {
-            Enterprises enterprise = (from e in db.Enterprises where e.ContactEmail == email select e).First();
+            Enterprises enterprise = (from e in db.Enterprises where e.ContactEmail == email select e).FirstOrDefault();
             return enterprise;
         }
     }
