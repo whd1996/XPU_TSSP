@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-<title>修改信息</title>
+<title>修改简介</title>
 <link rel="stylesheet" type="text/css" href="../../static/Assets/css/reset.css"/>
 <script type="text/javascript" src="../../static/Assets/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../../static/Assets/js/js_z.js"></script>
@@ -30,8 +30,8 @@
              <li ><a href="/Enterprise/Index">首页</a></li>
             <li class="now"><a href="/Enterprise/CompanyProfile">企业简介</a></li>
             <li><a href="/Enterprise/JobPostings">企业招聘</a></li>
-            <li><a href="product.html">项目发布</a></li>
-            <li><a href="service.html">面试邀约</a></li>
+            <li><a href="/pages/UpdateProject">项目发布</a></li>
+            <li><a href="/pages/UpdateResume">面试邀约</a></li>
         </ul>
         <div class="search">
         	<input name="" type="text" class="text"/>
@@ -56,13 +56,16 @@
 <!--幻灯片-->
 <div class="scd clearfix">
 	<div class="scd_l">
+        <ul class="s_nav">
+        	<li><a href="/Enterprise/CompanyProfile"">企业简介</a><i>&nbsp;</i></li>
+            <li><a href="/pages/UpdateEnterprise">修改信息</a><i>&nbsp;</i></li>
+
+        </ul>
     		<div class="title">
         	<span>修改简介</span>
             <i>&nbsp;</i>    
         </div>
-        <ul class="s_nav">
-        	<li><a href="/Enterprise/CompanyProfile"">企业简介</a><i>&nbsp;</i></li>
-            <li><a href="/pages/UpdateEnterprise">修改信息</a><i>&nbsp;</i></li>
+        <ul class="s_nav">       	
             <li><a href="">资质荣誉</a><i>&nbsp;</i></li>
             <li><a href="">合作伙伴</a><i>&nbsp;</i></li>
         </ul>
@@ -74,7 +77,7 @@
         	<div class="about">
            <%--   <asp:Image ID="IntroductionImage" runat="server" />
             <div class="space_hx">&&nbsp;</div>--%>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Width="1222px" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Width="1175px" CellPadding="4" ForeColor="#333333" GridLines="None" Height="274px">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" Visible="False" />

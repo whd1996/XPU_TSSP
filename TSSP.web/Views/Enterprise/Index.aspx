@@ -36,12 +36,12 @@
             <li class="now"><a href="/Enterprise/Index">首页</a></li>
             <li><a href="/Enterprise/CompanyProfile">企业简介</a></li>
             <li><a href="solution.html">企业招聘</a></li>
-            <li><a href="product.html">项目发布</a></li>
-            <li><a href="service.html">面试邀约</a></li>
+            <li><a href="/pages/UpdateProject">项目发布</a></li>
+            <li><a href="/pages/UpdateResume">面试邀约</a></li>
         </ul>
         <div class="search">
-        	<input name="" type="text" class="text">
-            <input name="" type="submit" class="btn" value="">
+        	<input name="" type="text" class="text"/>
+            <input name="" type="submit" class="btn" value=""/>
         </div>
         <div class="nav_m">
         	<span class="n_icon">&nbsp;</span>

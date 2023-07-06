@@ -23,6 +23,11 @@ namespace TSSP.web.Controllers
             ViewBag.Message = "跳转注册页";
             return View();
         }
-       
+        public ActionResult ForgetPwd()
+        {
+            ViewBag.Message = "忘记密码页";
+            return View();
+        }
+
     }
 }

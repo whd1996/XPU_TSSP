@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="JobPostings.aspx.cs" Inherits="TSSP.web.Views.Enterprise.JobPostings" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateProjectSubmission.aspx.cs" Inherits="TSSP.web.pages.UpdateProjectSubmission" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-		<title>招聘信息</title>
+		<title>项目成果展示</title>
 		<link rel="stylesheet" type="text/css" href="../../static/Assets/css/reset.css" />
 		<script type="text/javascript" src="../../static/Assets/js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="../../static/Assets/js/js_z.js"></script>
@@ -31,16 +31,18 @@
 						<li>
 							<a href="/Enterprise/CompanyProfile">企业简介</a>
 						</li>
-						<li class="now">
+						<li>
 							<a href="/Enterprise/JobPostings">企业招聘</a>
 						</li>
-						<li><a href="/pages/UpdateProject">项目发布</a></li>
-						<li><a href="/pages/UpdateResume">面试邀约</a></li>
+						<li class="now"><a href="/pages/UpdateProject">项目发布</a></li>
+						<li>
+							<a href="/pages/UpdateResume">面试邀约</a>
+						</li>
 					</ul>
 
 					<div class="search">
-						<input name="" type="text" class="text">
-						<input name="" type="submit" class="btn" value="">
+						<input name="" type="text" class="text"/>
+						<input name="" type="submit" class="btn" value=""/>
 					</div>
 					<div class="nav_m">
 						<span class="n_icon">&nbsp;</span>
@@ -75,16 +77,18 @@
 			<!--幻灯片-->
 			<div class="scd clearfix">
 				<div class="scd_l">
+					<ul class="s_nav">
+						<li>
+							<a href="/pages/UpdateProject">项目信息</a>
+							<i>&nbsp;</i>
+						</li>					
+					</ul>
 					<div class="title">
-						<span>招聘简介</span>
+						<span>项目完成情况</span>
 						<i>&nbsp;</i>
 					</div>
 
-					<ul class="s_nav">
-						<li>
-							<a href="/pages/UpdateJobPosting">招聘信息修改</a>
-							<i>&nbsp;</i>
-						</li>
+					<ul class="s_nav">					
 						<li>
 							<a href="">资质荣誉</a>
 							<i>&nbsp;</i>
@@ -98,52 +102,64 @@
 				<div class="scd_r">							
 					<div class="head">
 						<asp:Label ID="ENamelabel" runat="server" Text="公司名称"></asp:Label>
-						招聘信息<em>COMPANY PROFILE</em>
+						成果展示<em>COMPANY PROFILE</em>
 					</div>
 					<div class="s_ctn">
 						<div class="about">
-							<%--	<img src="../../static/Assets/upload/pic5.jpg" alt=""/>--%>
-							<asp:DataList ID="DataList1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyField="Id" DataSourceID="SqlDataSource1" GridLines="Horizontal" Height="349px" Width="726px" ForeColor="Black">
-                                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                                <ItemTemplate>
-                                    编号:&nbsp;
-                                    <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <br />
-                                    公司编号:&nbsp;
-                                    <asp:Label ID="EnterpriseIdLabel" runat="server" Text='<%# Eval("EnterpriseId") %>' />
-                                    <br />
-                                    岗位:&nbsp;
-                                    <asp:Label ID="PositionLabel" runat="server" Text='<%# Eval("Position") %>' />
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <br />
-                                    岗位工资:&nbsp;
-                                    <asp:Label ID="SalaryLabel" runat="server" Text='<%# Eval("Salary") %>' />
-                                    <br />
-                                    岗位需求:&nbsp;&nbsp;
-                                    <asp:Label ID="RequirementsLabel" runat="server" Text='<%# Eval("Requirements") %>' />
-                                    <br />
-<br />
-                                </ItemTemplate>
-                                <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                            </asp:DataList>
 
-							<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [JobPostings] WHERE ([EnterpriseId] = @EnterpriseId)">
+							<%--	<img src="../../static/Assets/upload/pic5.jpg" alt=""/>--%>
+                            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" Width="983px" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" GridLines="None" ForeColor="#333333">
+                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                <Columns>
+                                    <asp:BoundField DataField="pid" HeaderText="项目编号" InsertVisible="False" ReadOnly="True" SortExpression="pid" />
+                                    <asp:BoundField DataField="Name" HeaderText="项目名称" SortExpression="Name" />
+                                    <asp:BoundField DataField="Id1" HeaderText="学生id" SortExpression="Id1" InsertVisible="False" ReadOnly="True" />
+                                    <asp:BoundField DataField="FullName" HeaderText="完成学生" SortExpression="FullName" />
+                                    <asp:BoundField DataField="Email" HeaderText="学生邮箱" SortExpression="Email" />
+                                    <asp:BoundField DataField="SubmissionText" HeaderText="成果描述" SortExpression="SubmissionText" />
+                                    <asp:ImageField DataImageUrlField="SubmissionImage" HeaderText="成果图" NullDisplayText="无" NullImageUrl="~/static/img/yes.png">
+                                    </asp:ImageField>
+                                    <asp:HyperLinkField DataNavigateUrlFields="SubmissionAttachment" Text="成果附件" />
+                                </Columns>
+                                <EditRowStyle BackColor="#999999" />
+                                <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
+                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT
+	ps.id,
+	ps.SubmissionAttachment,
+	ps.SubmissionImage,
+	ps.SubmissionText,
+	p.Id pid,
+	e.CompanyName,
+	p.Name,
+	s.Id,
+	s.FullName,
+	s.Email 
+FROM
+	ProjectSubmissions ps
+	LEFT JOIN Projects p ON ps.ProjectId= p.Id
+	LEFT JOIN Students s ON s.Id= ps.Id
+	LEFT JOIN Enterprises e ON e.Id=p.EnterpriseId
+	where e.Id=@id">
                                 <SelectParameters>
-                                    <asp:SessionParameter Name="EnterpriseId" SessionField="enterprise" Type="Int32" />
+                                    <asp:SessionParameter DefaultValue="" Name="id" SessionField="enterprise" />
                                 </SelectParameters>
                             </asp:SqlDataSource>
+                            <br />
 
-<%--							<div class="space_hx"></div>
-
-							<div style="border-top:1px solid #ddd; padding-top:30px; font-size:14px; color:#777;">
-								
-								<p style="margin-top:50px; text-indent:2em;">
-								
-								</p>--%>
 						</div>
 					</div>
+						
+                            <br />
+							 <br />
 				</div>
 			</div>
 					          
@@ -189,3 +205,6 @@
 		</form>
 	</body>
 </html>
+
+
+

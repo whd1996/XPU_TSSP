@@ -18,5 +18,20 @@ namespace TSSP.BLL
             Students student = (from s in db.Students where s.Email == email select s).FirstOrDefault();
             return student;
         }
+
+        public void UpdateStudent(Students stu)
+        {
+            Students student = db.Students.Where(e => e.Id == stu.Id).FirstOrDefault();
+            if (student != null)
+            {
+                try
+                {
+                    //用修改后的值给修改前的值赋值
+                    student = stu;
+                    db.SubmitChanges();//执行
+                }
+                catch { }
+            }
+        }
     }
 }

@@ -33,18 +33,22 @@
             </div>
             <form id="loginForm" runat="server" method="post" action="/Login/CheckLogin">
                 <p class="p user_icon">
-                    <input type="email" placeholder="邮箱号" name="email" autocomplete="off" class="login_txtbx" required>
+                    <input id="email" type="email" placeholder="邮箱号" name="email" autocomplete="off" class="login_txtbx" required
+                        onkeyup="javascript:loginValidate()">
                 </p>
                 <p class="p pwd_icon">
-                    <input type="password" placeholder="密码" name="password" autocomplete="off" class="login_txtbx" required>
+                    <input id="pwd" type="password" placeholder="密码" name="password" autocomplete="off" class="login_txtbx" required
+                        onkeyup="javascript:loginValidate()">
                 </p>
+                 <div id="tishi" ><span></span></div>
                 <p style="color: white" class="">
                     <input type="radio" name="role" class="login_txtbx" value="0" />企业
                     <input type="radio" name="role" class="login_txtbx" value="1" checked />大学生
+                      <span><a style="text-decoration:none;color:darkslategrey" href="/Home/ForgetPwd">&emsp;忘记密码</a></span>
                 </p>
                 <div class="p val_icon">
                     <div class="checkcode">
-                        <input type="text" id="J_codetext" placeholder="验证码" autocomplete="off" maxlength="4" class="login_txtbx">
+                        <input type="text" id="J_codetext" placeholder="验证码" onkeyup="javascript:loginValidate()" autocomplete="off" maxlength="4" class="login_txtbx">
                         <canvas class="J_codeimg" id="myCanvas" onclick="createCode()" onselectstart="return false">对不起，您的浏览器不支持canvas，请下载最新版浏览器!</canvas>
                     </div>
                     <a class="ver_btn" onclick="createCode();" onselectstart="return false">看不清，换一张</a>

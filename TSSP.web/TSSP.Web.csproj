@@ -103,7 +103,11 @@
   <ItemGroup>
     <Content Include="pages\UpdateCompanyProfile.aspx" />
     <Content Include="pages\UpdateEnterprise.aspx" />
+    <Content Include="pages\UpdateInterView.aspx" />
     <Content Include="pages\UpdateJobPosting.aspx" />
+    <Content Include="pages\UpdateProject.aspx" />
+    <Content Include="pages\UpdateProjectSubmission.aspx" />
+    <Content Include="pages\UpdateResume.aspx" />
     <Content Include="static\Assets\css\reset.css" />
     <Content Include="static\Assets\css\responsive.css" />
     <Content Include="static\Assets\css\thems.css" />
@@ -154,6 +158,7 @@
     <Content Include="Views\Enterprise\Index.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Enterprise\JobPostings.aspx" />
+    <Content Include="Views\Home\ForgetPwd.aspx" />
     <Content Include="Views\Home\Login.aspx" />
     <Content Include="Views\Home\Register.aspx" />
     <Content Include="static\css\login.css" />
@@ -207,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="pages\UpdateCompanyProfile.aspx.cs">
       <DependentUpon>UpdateCompanyProfile.aspx</DependentUpon>
@@ -222,12 +228,40 @@
     <Compile Include="pages\UpdateEnterprise.aspx.designer.cs">
       <DependentUpon>UpdateEnterprise.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\UpdateInterView.aspx.cs">
+      <DependentUpon>UpdateInterView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\UpdateInterView.aspx.designer.cs">
+      <DependentUpon>UpdateInterView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\UpdateJobPosting.aspx.cs">
       <DependentUpon>UpdateJobPosting.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\UpdateJobPosting.aspx.designer.cs">
       <DependentUpon>UpdateJobPosting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\UpdateProject.aspx.cs">
+      <DependentUpon>UpdateProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\UpdateProject.aspx.designer.cs">
+      <DependentUpon>UpdateProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\UpdateProjectSubmission.aspx.cs">
+      <DependentUpon>UpdateProjectSubmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\UpdateProjectSubmission.aspx.designer.cs">
+      <DependentUpon>UpdateProjectSubmission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\UpdateResume.aspx.cs">
+      <DependentUpon>UpdateResume.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\UpdateResume.aspx.designer.cs">
+      <DependentUpon>UpdateResume.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Enterprise\CompanyProfile.aspx.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>
@@ -256,6 +290,13 @@
     </Compile>
     <Compile Include="Views\Enterprise\JobPostings.aspx.designer.cs">
       <DependentUpon>JobPostings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\ForgetPwd.aspx.cs">
+      <DependentUpon>ForgetPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\ForgetPwd.aspx.designer.cs">
+      <DependentUpon>ForgetPwd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

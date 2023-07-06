@@ -11,7 +11,7 @@ namespace TSSP.web.pages
 {
 
 
-    public partial class UpdateJobPosting
+    public partial class UpdateInterView
     {
 
         /// <summary>
