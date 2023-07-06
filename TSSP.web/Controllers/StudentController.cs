@@ -13,5 +13,30 @@ namespace TSSP.web.Controllers
             ViewBag.Message = "Your application description page.";
             return View();
         }
+        public ActionResult Biography()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        } 
+        public ActionResult Project()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+            public ActionResult ProjectSubm()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+        public ActionResult Reviews()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+        public ActionResult Share()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
     }
 }
