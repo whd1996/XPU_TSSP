@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
- <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+ <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"/>
   <title>科技网络-首页</title>
-  <link rel="stylesheet" href="../../static/stuStatic/layui/css/layui.css">
-  <link rel="stylesheet" href="../../static/stuStatic/static/css/index.css">
+  <link rel="stylesheet" href="../../static/stuStatic/layui/css/layui.css"/>
+  <link rel="stylesheet" href="../../static/stuStatic/static/css/index.css"/>
 </head>
 <body>
   <!-- nav部分 -->
@@ -26,11 +26,10 @@
         </button>
         <ul class="layui-nav" lay-filter="">
           <li class="layui-nav-item layui-this"><a href="/Student/Index">首页</a></li>
-          <li class="layui-nav-item"><a href="/Student/Biography">个人简介</a></li>
-          <li class="layui-nav-item "><a href="/Student/Project">项目选定</a></li>
-       <li class="layui-nav-item"><a href="/Student/ProjectSubm">项目提交</a></li>
-          <li class="layui-nav-item "><a href="/Student/Reviews">企业评价</a></li>
-           <li class="layui-nav-item"><a href="/Student/Share">就业分享</a></li>
+          <li class="layui-nav-item"><a href="/pages/Biography">个人简介</a></li>
+          <li class="layui-nav-item "><a href="/pages/Project">项目选定</a></li>
+       <li class="layui-nav-item"><a href="/pages/ProjectSubm">项目提交</a></li>
+           <li class="layui-nav-item"><a href="/pages/Share">就业分享</a></li>
         </ul>
       </div>
     </div>
@@ -38,22 +37,21 @@
   <!-- banner部分 -->
   <div>
     <div class="layui-carousel" id="banner">
-      <div carousel-item>
+      <div carousel-item/>
         <div>
-          <img src="../../static/stuStatic/static/img/banner1.jpg">
+          <img src="../../static/stuStatic/static/img/banner1.jpg"/>
           <div class="panel">
             <p class="title">科技网络</p>
             <p>完美前端体验</p>
           </div>
         </div>
         <div>
-          <img src="../../static/stuStatic/static/img/banner2.jpg">
+          <img src="../../static/stuStatic/static/img/banner2.jpg"/>
           <div class="panel">
             <p class="title">科技网络</p>
             <p>完美前端体验</p>
           </div>
         </div>
-      </div>
     </div>
   </div>
   <!-- main部分 -->
