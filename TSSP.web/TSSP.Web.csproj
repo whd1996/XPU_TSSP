@@ -101,7 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pages\UpdateCompanyProfile.aspx" />
     <Content Include="pages\UpdateEnterprise.aspx" />
+    <Content Include="pages\UpdateJobPosting.aspx" />
     <Content Include="static\Assets\css\reset.css" />
     <Content Include="static\Assets\css\responsive.css" />
     <Content Include="static\Assets\css\thems.css" />
@@ -139,6 +141,7 @@
     <Content Include="static\Assets\js\main.js" />
     <Content Include="static\Assets\upload\banner.jpg" />
     <Content Include="static\Assets\upload\banner_a.jpg" />
+    <Content Include="static\Assets\upload\banner_a.png" />
     <Content Include="static\Assets\upload\map.jpg" />
     <Content Include="static\Assets\upload\pic1.jpg" />
     <Content Include="static\Assets\upload\pic2.jpg" />
@@ -146,152 +149,11 @@
     <Content Include="static\Assets\upload\pic4.jpg" />
     <Content Include="static\Assets\upload\pic5.jpg" />
     <Content Include="static\Assets\upload\pic6.png" />
-    <Content Include="static\stuStatic\layui\css\layui.css" />
-    <Content Include="static\stuStatic\layui\css\layui.mobile.css" />
-    <Content Include="static\stuStatic\layui\css\modules\code.css" />
-    <Content Include="static\stuStatic\layui\css\modules\laydate\default\laydate.css" />
-    <Content Include="static\stuStatic\layui\css\modules\layer\default\icon-ext.png" />
-    <Content Include="static\stuStatic\layui\css\modules\layer\default\icon.png" />
-    <Content Include="static\stuStatic\layui\css\modules\layer\default\layer.css" />
-    <Content Include="static\stuStatic\layui\css\modules\layer\default\loading-0.gif" />
-    <Content Include="static\stuStatic\layui\css\modules\layer\default\loading-1.gif" />
-    <Content Include="static\stuStatic\layui\css\modules\layer\default\loading-2.gif" />
-    <Content Include="static\stuStatic\layui\font\iconfont.svg" />
-    <Content Include="static\stuStatic\layui\images\face\0.gif" />
-    <Content Include="static\stuStatic\layui\images\face\1.gif" />
-    <Content Include="static\stuStatic\layui\images\face\10.gif" />
-    <Content Include="static\stuStatic\layui\images\face\11.gif" />
-    <Content Include="static\stuStatic\layui\images\face\12.gif" />
-    <Content Include="static\stuStatic\layui\images\face\13.gif" />
-    <Content Include="static\stuStatic\layui\images\face\14.gif" />
-    <Content Include="static\stuStatic\layui\images\face\15.gif" />
-    <Content Include="static\stuStatic\layui\images\face\16.gif" />
-    <Content Include="static\stuStatic\layui\images\face\17.gif" />
-    <Content Include="static\stuStatic\layui\images\face\18.gif" />
-    <Content Include="static\stuStatic\layui\images\face\19.gif" />
-    <Content Include="static\stuStatic\layui\images\face\2.gif" />
-    <Content Include="static\stuStatic\layui\images\face\20.gif" />
-    <Content Include="static\stuStatic\layui\images\face\21.gif" />
-    <Content Include="static\stuStatic\layui\images\face\22.gif" />
-    <Content Include="static\stuStatic\layui\images\face\23.gif" />
-    <Content Include="static\stuStatic\layui\images\face\24.gif" />
-    <Content Include="static\stuStatic\layui\images\face\25.gif" />
-    <Content Include="static\stuStatic\layui\images\face\26.gif" />
-    <Content Include="static\stuStatic\layui\images\face\27.gif" />
-    <Content Include="static\stuStatic\layui\images\face\28.gif" />
-    <Content Include="static\stuStatic\layui\images\face\29.gif" />
-    <Content Include="static\stuStatic\layui\images\face\3.gif" />
-    <Content Include="static\stuStatic\layui\images\face\30.gif" />
-    <Content Include="static\stuStatic\layui\images\face\31.gif" />
-    <Content Include="static\stuStatic\layui\images\face\32.gif" />
-    <Content Include="static\stuStatic\layui\images\face\33.gif" />
-    <Content Include="static\stuStatic\layui\images\face\34.gif" />
-    <Content Include="static\stuStatic\layui\images\face\35.gif" />
-    <Content Include="static\stuStatic\layui\images\face\36.gif" />
-    <Content Include="static\stuStatic\layui\images\face\37.gif" />
-    <Content Include="static\stuStatic\layui\images\face\38.gif" />
-    <Content Include="static\stuStatic\layui\images\face\39.gif" />
-    <Content Include="static\stuStatic\layui\images\face\4.gif" />
-    <Content Include="static\stuStatic\layui\images\face\40.gif" />
-    <Content Include="static\stuStatic\layui\images\face\41.gif" />
-    <Content Include="static\stuStatic\layui\images\face\42.gif" />
-    <Content Include="static\stuStatic\layui\images\face\43.gif" />
-    <Content Include="static\stuStatic\layui\images\face\44.gif" />
-    <Content Include="static\stuStatic\layui\images\face\45.gif" />
-    <Content Include="static\stuStatic\layui\images\face\46.gif" />
-    <Content Include="static\stuStatic\layui\images\face\47.gif" />
-    <Content Include="static\stuStatic\layui\images\face\48.gif" />
-    <Content Include="static\stuStatic\layui\images\face\49.gif" />
-    <Content Include="static\stuStatic\layui\images\face\5.gif" />
-    <Content Include="static\stuStatic\layui\images\face\50.gif" />
-    <Content Include="static\stuStatic\layui\images\face\51.gif" />
-    <Content Include="static\stuStatic\layui\images\face\52.gif" />
-    <Content Include="static\stuStatic\layui\images\face\53.gif" />
-    <Content Include="static\stuStatic\layui\images\face\54.gif" />
-    <Content Include="static\stuStatic\layui\images\face\55.gif" />
-    <Content Include="static\stuStatic\layui\images\face\56.gif" />
-    <Content Include="static\stuStatic\layui\images\face\57.gif" />
-    <Content Include="static\stuStatic\layui\images\face\58.gif" />
-    <Content Include="static\stuStatic\layui\images\face\59.gif" />
-    <Content Include="static\stuStatic\layui\images\face\6.gif" />
-    <Content Include="static\stuStatic\layui\images\face\60.gif" />
-    <Content Include="static\stuStatic\layui\images\face\61.gif" />
-    <Content Include="static\stuStatic\layui\images\face\62.gif" />
-    <Content Include="static\stuStatic\layui\images\face\63.gif" />
-    <Content Include="static\stuStatic\layui\images\face\64.gif" />
-    <Content Include="static\stuStatic\layui\images\face\65.gif" />
-    <Content Include="static\stuStatic\layui\images\face\66.gif" />
-    <Content Include="static\stuStatic\layui\images\face\67.gif" />
-    <Content Include="static\stuStatic\layui\images\face\68.gif" />
-    <Content Include="static\stuStatic\layui\images\face\69.gif" />
-    <Content Include="static\stuStatic\layui\images\face\7.gif" />
-    <Content Include="static\stuStatic\layui\images\face\70.gif" />
-    <Content Include="static\stuStatic\layui\images\face\71.gif" />
-    <Content Include="static\stuStatic\layui\images\face\8.gif" />
-    <Content Include="static\stuStatic\layui\images\face\9.gif" />
-    <Content Include="static\stuStatic\layui\layui.all.js" />
-    <Content Include="static\stuStatic\layui\layui.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\carousel.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\code.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\colorpicker.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\element.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\flow.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\form.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\jquery.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\laydate.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\layedit.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\layer.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\laypage.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\laytpl.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\mobile.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\rate.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\slider.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\table.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\tree.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\upload.js" />
-    <Content Include="static\stuStatic\layui\lay\modules\util.js" />
-    <Content Include="static\stuStatic\static\css\index.css" />
-    <Content Include="static\stuStatic\static\img\banner3.jpg" />
-    <Content Include="static\stuStatic\static\img\banner1.jpg" />
-    <Content Include="static\stuStatic\static\img\banner2.jpg" />
-    <Content Include="static\stuStatic\static\img\Big_icon1.png" />
-    <Content Include="static\stuStatic\static\img\Big_icon2.png" />
-    <Content Include="static\stuStatic\static\img\Big_icon3.png" />
-    <Content Include="static\stuStatic\static\img\Big_icon4.png" />
-    <Content Include="static\stuStatic\static\img\case1.jpg" />
-    <Content Include="static\stuStatic\static\img\case2.jpg" />
-    <Content Include="static\stuStatic\static\img\case3.jpg" />
-    <Content Include="static\stuStatic\static\img\case4.jpg" />
-    <Content Include="static\stuStatic\static\img\case5.jpg" />
-    <Content Include="static\stuStatic\static\img\case6.jpg" />
-    <Content Include="static\stuStatic\static\img\case7.jpg" />
-    <Content Include="static\stuStatic\static\img\case8.jpg" />
-    <Content Include="static\stuStatic\static\img\case9.jpg" />
-    <Content Include="static\stuStatic\static\img\banner4.jpg" />
-    <Content Include="static\stuStatic\static\img\erweima.jpg" />
-    <Content Include="static\stuStatic\static\img\home_img1.jpg" />
-    <Content Include="static\stuStatic\static\img\home_img2.jpg" />
-    <Content Include="static\stuStatic\static\img\home_img3.jpg" />
-    <Content Include="static\stuStatic\static\img\home_img4.jpg" />
-    <Content Include="static\stuStatic\static\img\logo.png" />
-    <Content Include="static\stuStatic\static\img\nav_img1.jpg" />
-    <Content Include="static\stuStatic\static\img\nav_img2.jpg" />
-    <Content Include="static\stuStatic\static\img\nav_img3.jpg" />
-    <Content Include="static\stuStatic\static\img\nav_img4.jpg" />
-    <Content Include="static\stuStatic\static\img\news_big.jpg" />
-    <Content Include="static\stuStatic\static\img\news_img1.jpg" />
-    <Content Include="static\stuStatic\static\img\Product_img1.jpg" />
-    <Content Include="static\stuStatic\static\img\Product_img4.jpg" />
-    <Content Include="static\stuStatic\static\img\us_img3.jpg" />
-    <Content Include="static\stuStatic\static\img\us_img4.png" />
-    <Content Include="static\stuStatic\static\img\us_img5.png" />
-    <Content Include="static\stuStatic\static\img\us_img6.png" />
-    <Content Include="static\stuStatic\static\img\us_img7.png" />
-    <Content Include="static\stuStatic\static\img\us_img8.png" />
-    <Content Include="static\stuStatic\static\js\firm.js" />
+    <Content Include="static\img\banner_a.png" />
     <Content Include="Views\Enterprise\CompanyProfile.aspx" />
     <Content Include="Views\Enterprise\Index.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Enterprise\JobPostings.aspx" />
     <Content Include="Views\Home\Login.aspx" />
     <Content Include="Views\Home\Register.aspx" />
     <Content Include="static\css\login.css" />
@@ -339,24 +201,33 @@
     <Content Include="static\lib\jquery\1.9.1\jquery.js" />
     <Content Include="static\lib\jquery\1.9.1\jquery.min.js" />
     <Content Include="Views\Image\Upload.aspx" />
-    <Content Include="Views\Student\Biography.aspx" />
     <Content Include="Views\Student\Index.aspx" />
-    <Content Include="Views\Student\Project.aspx" />
-    <Content Include="Views\Student\ProjectSubm.aspx" />
-    <Content Include="Views\Student\Reviews.aspx" />
-    <Content Include="Views\Student\Share.aspx" />
     <Content Include="Web.config" />
     <Content Include="Sql\数据库创建.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="pages\UpdateCompanyProfile.aspx.cs">
+      <DependentUpon>UpdateCompanyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\UpdateCompanyProfile.aspx.designer.cs">
+      <DependentUpon>UpdateCompanyProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\UpdateEnterprise.aspx.cs">
       <DependentUpon>UpdateEnterprise.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\UpdateEnterprise.aspx.designer.cs">
       <DependentUpon>UpdateEnterprise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\UpdateJobPosting.aspx.cs">
+      <DependentUpon>UpdateJobPosting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\UpdateJobPosting.aspx.designer.cs">
+      <DependentUpon>UpdateJobPosting.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Enterprise\CompanyProfile.aspx.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>
@@ -378,6 +249,13 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Enterprise\JobPostings.aspx.cs">
+      <DependentUpon>JobPostings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Enterprise\JobPostings.aspx.designer.cs">
+      <DependentUpon>JobPostings.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -401,13 +279,6 @@
     <Compile Include="Views\Image\Upload.aspx.designer.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\Biography.aspx.cs">
-      <DependentUpon>Biography.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Student\Biography.aspx.designer.cs">
-      <DependentUpon>Biography.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Student\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -415,41 +286,10 @@
     <Compile Include="Views\Student\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\Project.aspx.cs">
-      <DependentUpon>Project.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Student\Project.aspx.designer.cs">
-      <DependentUpon>Project.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Student\ProjectSubm.aspx.cs">
-      <DependentUpon>ProjectSubm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Student\ProjectSubm.aspx.designer.cs">
-      <DependentUpon>ProjectSubm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Student\Reviews.aspx.cs">
-      <DependentUpon>Reviews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Student\Reviews.aspx.designer.cs">
-      <DependentUpon>Reviews.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Student\Share.aspx.cs">
-      <DependentUpon>Share.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Student\Share.aspx.designer.cs">
-      <DependentUpon>Share.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Views\web.config" />
-    <Content Include="static\stuStatic\layui\font\iconfont.eot" />
-    <Content Include="static\stuStatic\layui\font\iconfont.ttf" />
-    <Content Include="static\stuStatic\layui\font\iconfont.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -459,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TSSP.BLL\TSSP.BLL.csproj">

@@ -32,5 +32,15 @@ namespace TSSP.DAL.Properties {
                 return ((string)(this["XPU_TSSPConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xpu.tssp;Initial Catalog=XPU-TSSP;User ID=sa;Password=123456")]
+        public string XPU_TSSPConnectionString1 {
+            get {
+                return ((string)(this["XPU_TSSPConnectionString1"]));
+            }
+        }
     }
 }

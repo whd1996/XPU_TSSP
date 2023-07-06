@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="XPU-TSSP" Class="XPU_TSSPDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=XPU-TSSP;Integrated Security=True" SettingsObjectName="TSSP.DAL.Properties.Settings" SettingsPropertyName="XPU_TSSPConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Comments" Member="Comments">
-    <Type Name="Comments">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EntityType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="EntityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CommentText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Association Name="Comments_Comments" Member="Comments2" ThisKey="Id" OtherKey="ParentId" Type="Comments" />
-      <Association Name="Comments_Comments" Member="Comments1" ThisKey="ParentId" OtherKey="Id" Type="Comments" IsForeignKey="true" />
-      <Association Name="Students_Comments" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=xpu.tssp;Initial Catalog=XPU-TSSP;User ID=sa" SettingsObjectName="TSSP.DAL.Properties.Settings" SettingsPropertyName="XPU_TSSPConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Students" Member="Students">
     <Type Name="Students">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -31,6 +18,19 @@
       <Association Name="Students_PersonalResumes" Member="PersonalResumes" ThisKey="Id" OtherKey="StudentId" Type="PersonalResumes" />
       <Association Name="Students_ProjectSubmissions" Member="ProjectSubmissions" ThisKey="Id" OtherKey="StudentId" Type="ProjectSubmissions" />
       <Association Name="Students_Resumes" Member="Resumes" ThisKey="Id" OtherKey="StudentId" Type="Resumes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comments" Member="Comments">
+    <Type Name="Comments">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntityType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EntityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommentText" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Comments_Comments" Member="Comments2" ThisKey="Id" OtherKey="ParentId" Type="Comments" />
+      <Association Name="Comments_Comments" Member="Comments1" ThisKey="ParentId" OtherKey="Id" Type="Comments" IsForeignKey="true" />
+      <Association Name="Students_Comments" Member="Students" ThisKey="StudentId" OtherKey="Id" Type="Students" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CompanyProfiles" Member="CompanyProfiles">

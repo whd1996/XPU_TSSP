@@ -30,12 +30,12 @@ namespace TSSP.DAL
 		
     #region 可扩展性方法定义
     partial void OnCreated();
-    partial void InsertComments(Comments instance);
-    partial void UpdateComments(Comments instance);
-    partial void DeleteComments(Comments instance);
     partial void InsertStudents(Students instance);
     partial void UpdateStudents(Students instance);
     partial void DeleteStudents(Students instance);
+    partial void InsertComments(Comments instance);
+    partial void UpdateComments(Comments instance);
+    partial void DeleteComments(Comments instance);
     partial void InsertCompanyProfiles(CompanyProfiles instance);
     partial void UpdateCompanyProfiles(CompanyProfiles instance);
     partial void DeleteCompanyProfiles(CompanyProfiles instance);
@@ -72,7 +72,7 @@ namespace TSSP.DAL
     #endregion
 		
 		public XPU_TSSPDataContext() : 
-				base(global::TSSP.DAL.Properties.Settings.Default.XPU_TSSPConnectionString, mappingSource)
+				base(global::TSSP.DAL.Properties.Settings.Default.XPU_TSSPConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -101,19 +101,19 @@ namespace TSSP.DAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Comments> Comments
-		{
-			get
-			{
-				return this.GetTable<Comments>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Students> Students
 		{
 			get
 			{
 				return this.GetTable<Students>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Comments> Comments
+		{
+			get
+			{
+				return this.GetTable<Comments>();
 			}
 		}
 		
@@ -203,298 +203,6 @@ namespace TSSP.DAL
 			{
 				return this.GetTable<Resumes>();
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Comments")]
-	public partial class Comments : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private System.Nullable<int> _ParentId;
-		
-		private string _EntityType;
-		
-		private System.Nullable<int> _EntityId;
-		
-		private int _StudentId;
-		
-		private string _CommentText;
-		
-		private EntitySet<Comments> _Comments2;
-		
-		private EntityRef<Comments> _Comments1;
-		
-		private EntityRef<Students> _Students;
-		
-    #region 可扩展性方法定义
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnParentIdChanging(System.Nullable<int> value);
-    partial void OnParentIdChanged();
-    partial void OnEntityTypeChanging(string value);
-    partial void OnEntityTypeChanged();
-    partial void OnEntityIdChanging(System.Nullable<int> value);
-    partial void OnEntityIdChanged();
-    partial void OnStudentIdChanging(int value);
-    partial void OnStudentIdChanged();
-    partial void OnCommentTextChanging(string value);
-    partial void OnCommentTextChanged();
-    #endregion
-		
-		public Comments()
-		{
-			this._Comments2 = new EntitySet<Comments>(new Action<Comments>(this.attach_Comments2), new Action<Comments>(this.detach_Comments2));
-			this._Comments1 = default(EntityRef<Comments>);
-			this._Students = default(EntityRef<Students>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentId", DbType="Int")]
-		public System.Nullable<int> ParentId
-		{
-			get
-			{
-				return this._ParentId;
-			}
-			set
-			{
-				if ((this._ParentId != value))
-				{
-					if (this._Comments1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnParentIdChanging(value);
-					this.SendPropertyChanging();
-					this._ParentId = value;
-					this.SendPropertyChanged("ParentId");
-					this.OnParentIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntityType", DbType="VarChar(50)")]
-		public string EntityType
-		{
-			get
-			{
-				return this._EntityType;
-			}
-			set
-			{
-				if ((this._EntityType != value))
-				{
-					this.OnEntityTypeChanging(value);
-					this.SendPropertyChanging();
-					this._EntityType = value;
-					this.SendPropertyChanged("EntityType");
-					this.OnEntityTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntityId", DbType="Int")]
-		public System.Nullable<int> EntityId
-		{
-			get
-			{
-				return this._EntityId;
-			}
-			set
-			{
-				if ((this._EntityId != value))
-				{
-					this.OnEntityIdChanging(value);
-					this.SendPropertyChanging();
-					this._EntityId = value;
-					this.SendPropertyChanged("EntityId");
-					this.OnEntityIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentId", DbType="Int NOT NULL")]
-		public int StudentId
-		{
-			get
-			{
-				return this._StudentId;
-			}
-			set
-			{
-				if ((this._StudentId != value))
-				{
-					if (this._Students.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnStudentIdChanging(value);
-					this.SendPropertyChanging();
-					this._StudentId = value;
-					this.SendPropertyChanged("StudentId");
-					this.OnStudentIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommentText", DbType="VarChar(MAX)")]
-		public string CommentText
-		{
-			get
-			{
-				return this._CommentText;
-			}
-			set
-			{
-				if ((this._CommentText != value))
-				{
-					this.OnCommentTextChanging(value);
-					this.SendPropertyChanging();
-					this._CommentText = value;
-					this.SendPropertyChanged("CommentText");
-					this.OnCommentTextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comments_Comments", Storage="_Comments2", ThisKey="Id", OtherKey="ParentId")]
-		public EntitySet<Comments> Comments2
-		{
-			get
-			{
-				return this._Comments2;
-			}
-			set
-			{
-				this._Comments2.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comments_Comments", Storage="_Comments1", ThisKey="ParentId", OtherKey="Id", IsForeignKey=true)]
-		public Comments Comments1
-		{
-			get
-			{
-				return this._Comments1.Entity;
-			}
-			set
-			{
-				Comments previousValue = this._Comments1.Entity;
-				if (((previousValue != value) 
-							|| (this._Comments1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Comments1.Entity = null;
-						previousValue.Comments2.Remove(this);
-					}
-					this._Comments1.Entity = value;
-					if ((value != null))
-					{
-						value.Comments2.Add(this);
-						this._ParentId = value.Id;
-					}
-					else
-					{
-						this._ParentId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Comments1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_Comments", Storage="_Students", ThisKey="StudentId", OtherKey="Id", IsForeignKey=true)]
-		public Students Students
-		{
-			get
-			{
-				return this._Students.Entity;
-			}
-			set
-			{
-				Students previousValue = this._Students.Entity;
-				if (((previousValue != value) 
-							|| (this._Students.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Students.Entity = null;
-						previousValue.Comments.Remove(this);
-					}
-					this._Students.Entity = value;
-					if ((value != null))
-					{
-						value.Comments.Add(this);
-						this._StudentId = value.Id;
-					}
-					else
-					{
-						this._StudentId = default(int);
-					}
-					this.SendPropertyChanged("Students");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Comments2(Comments entity)
-		{
-			this.SendPropertyChanging();
-			entity.Comments1 = this;
-		}
-		
-		private void detach_Comments2(Comments entity)
-		{
-			this.SendPropertyChanging();
-			entity.Comments1 = null;
 		}
 	}
 	
@@ -949,6 +657,298 @@ namespace TSSP.DAL
 		{
 			this.SendPropertyChanging();
 			entity.Students = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Comments")]
+	public partial class Comments : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _ParentId;
+		
+		private string _EntityType;
+		
+		private System.Nullable<int> _EntityId;
+		
+		private int _StudentId;
+		
+		private string _CommentText;
+		
+		private EntitySet<Comments> _Comments2;
+		
+		private EntityRef<Comments> _Comments1;
+		
+		private EntityRef<Students> _Students;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnParentIdChanging(System.Nullable<int> value);
+    partial void OnParentIdChanged();
+    partial void OnEntityTypeChanging(string value);
+    partial void OnEntityTypeChanged();
+    partial void OnEntityIdChanging(System.Nullable<int> value);
+    partial void OnEntityIdChanged();
+    partial void OnStudentIdChanging(int value);
+    partial void OnStudentIdChanged();
+    partial void OnCommentTextChanging(string value);
+    partial void OnCommentTextChanged();
+    #endregion
+		
+		public Comments()
+		{
+			this._Comments2 = new EntitySet<Comments>(new Action<Comments>(this.attach_Comments2), new Action<Comments>(this.detach_Comments2));
+			this._Comments1 = default(EntityRef<Comments>);
+			this._Students = default(EntityRef<Students>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParentId", DbType="Int")]
+		public System.Nullable<int> ParentId
+		{
+			get
+			{
+				return this._ParentId;
+			}
+			set
+			{
+				if ((this._ParentId != value))
+				{
+					if (this._Comments1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnParentIdChanging(value);
+					this.SendPropertyChanging();
+					this._ParentId = value;
+					this.SendPropertyChanged("ParentId");
+					this.OnParentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntityType", DbType="VarChar(50)")]
+		public string EntityType
+		{
+			get
+			{
+				return this._EntityType;
+			}
+			set
+			{
+				if ((this._EntityType != value))
+				{
+					this.OnEntityTypeChanging(value);
+					this.SendPropertyChanging();
+					this._EntityType = value;
+					this.SendPropertyChanged("EntityType");
+					this.OnEntityTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntityId", DbType="Int")]
+		public System.Nullable<int> EntityId
+		{
+			get
+			{
+				return this._EntityId;
+			}
+			set
+			{
+				if ((this._EntityId != value))
+				{
+					this.OnEntityIdChanging(value);
+					this.SendPropertyChanging();
+					this._EntityId = value;
+					this.SendPropertyChanged("EntityId");
+					this.OnEntityIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentId", DbType="Int NOT NULL")]
+		public int StudentId
+		{
+			get
+			{
+				return this._StudentId;
+			}
+			set
+			{
+				if ((this._StudentId != value))
+				{
+					if (this._Students.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStudentIdChanging(value);
+					this.SendPropertyChanging();
+					this._StudentId = value;
+					this.SendPropertyChanged("StudentId");
+					this.OnStudentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommentText", DbType="VarChar(MAX)")]
+		public string CommentText
+		{
+			get
+			{
+				return this._CommentText;
+			}
+			set
+			{
+				if ((this._CommentText != value))
+				{
+					this.OnCommentTextChanging(value);
+					this.SendPropertyChanging();
+					this._CommentText = value;
+					this.SendPropertyChanged("CommentText");
+					this.OnCommentTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comments_Comments", Storage="_Comments2", ThisKey="Id", OtherKey="ParentId")]
+		public EntitySet<Comments> Comments2
+		{
+			get
+			{
+				return this._Comments2;
+			}
+			set
+			{
+				this._Comments2.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Comments_Comments", Storage="_Comments1", ThisKey="ParentId", OtherKey="Id", IsForeignKey=true)]
+		public Comments Comments1
+		{
+			get
+			{
+				return this._Comments1.Entity;
+			}
+			set
+			{
+				Comments previousValue = this._Comments1.Entity;
+				if (((previousValue != value) 
+							|| (this._Comments1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Comments1.Entity = null;
+						previousValue.Comments2.Remove(this);
+					}
+					this._Comments1.Entity = value;
+					if ((value != null))
+					{
+						value.Comments2.Add(this);
+						this._ParentId = value.Id;
+					}
+					else
+					{
+						this._ParentId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Comments1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Students_Comments", Storage="_Students", ThisKey="StudentId", OtherKey="Id", IsForeignKey=true)]
+		public Students Students
+		{
+			get
+			{
+				return this._Students.Entity;
+			}
+			set
+			{
+				Students previousValue = this._Students.Entity;
+				if (((previousValue != value) 
+							|| (this._Students.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Students.Entity = null;
+						previousValue.Comments.Remove(this);
+					}
+					this._Students.Entity = value;
+					if ((value != null))
+					{
+						value.Comments.Add(this);
+						this._StudentId = value.Id;
+					}
+					else
+					{
+						this._StudentId = default(int);
+					}
+					this.SendPropertyChanged("Students");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Comments2(Comments entity)
+		{
+			this.SendPropertyChanging();
+			entity.Comments1 = this;
+		}
+		
+		private void detach_Comments2(Comments entity)
+		{
+			this.SendPropertyChanging();
+			entity.Comments1 = null;
 		}
 	}
 	

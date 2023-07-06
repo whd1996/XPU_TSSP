@@ -31,7 +31,7 @@
         <ul class="nav clearfix">
              <li ><a href="/Enterprise/Index">首页</a></li>
             <li class="now"><a href="/Enterprise/CompanyProfile">企业简介</a></li>
-            <li><a href="solution.html">企业招聘</a></li>
+            <li><a href="/Enterprise/JobPostings">企业招聘</a></li>
             <li><a href="product.html">项目发布</a></li>
             <li><a href="service.html">面试邀约</a></li>
         </ul>
@@ -64,14 +64,14 @@
         </div>
         <ul class="s_nav">
         	<li><a href="/Enterprise/CompanyProfile"">企业简介</a><i>&nbsp;</i></li>
-            <li><a href="">修改简介</a><i>&nbsp;</i></li>
+            <li><a href="/pages/UpdateCompanyProfile">修改简介</a><i>&nbsp;</i></li>
             <li><a href="">资质荣誉</a><i>&nbsp;</i></li>
             <li><a href="">合作伙伴</a><i>&nbsp;</i></li>
         </ul>
     </div>
     <div class="scd_r">
     	<div class="head"><asp:Label ID="ENamelabel" runat="server" Text="公司名称"></asp:Label>
-            企业信息<em>COMPANY INFO</em></div>
+            企业信息修改<em>COMPANY INFO</em></div>
         <div class="s_ctn">
         	<div class="about">
             

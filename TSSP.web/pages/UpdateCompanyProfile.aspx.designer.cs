@@ -7,11 +7,11 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace TSSP.web.Views.Enterprise
+namespace TSSP.web.pages
 {
 
 
-    public partial class Companyprofile
+    public partial class UpdateCompyProfile
     {
 
         /// <summary>
@@ -33,15 +33,6 @@ namespace TSSP.web.Views.Enterprise
         protected global::System.Web.UI.WebControls.ImageButton LogoImageButton;
 
         /// <summary>
-        /// IntroductionImage 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image IntroductionImage;
-
-        /// <summary>
         /// ENamelabel 控件。
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace TSSP.web.Views.Enterprise
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ENamelabel;
-
-        /// <summary>
-        /// CompanyTbx 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CompanyTbx;
 
         /// <summary>
         /// GridView1 控件。
