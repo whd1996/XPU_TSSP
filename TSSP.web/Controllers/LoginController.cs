@@ -24,7 +24,8 @@ namespace TSSP.web.Controllers
                 else
                 {
                     // System.Web.HttpContext.Current.Session["enterprise"] = enterprise.Id;
-                    Session["enterprise"] = enterprise.Id;     
+                    Session["enterprise"] = enterprise.Id;
+                    Session["isLogin"] = true;
                     return Redirect("/Enterprise/Index");
                 }
             }
@@ -34,6 +35,7 @@ namespace TSSP.web.Controllers
                     //HttpContext.Current.Session[key] = value;
                     //System.Web.HttpContext.Current.Session["student"] = stu.Id;
                     Session["student"]= stu.Id;
+                    Session["isLogin"] = true;
                     return Redirect("/Student/Index");
                 }
                 return new HttpStatusCodeResult(401, "大学生邮箱号或密码错误");
