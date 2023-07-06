@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TSSP.web.Views.Student
+namespace TSSP.web.pages
 {
-    public partial class Reviews : System.Web.Mvc.ViewPage
+    public partial class feedback : System.Web.Mvc.ViewPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

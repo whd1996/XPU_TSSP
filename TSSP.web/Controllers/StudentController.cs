@@ -28,12 +28,13 @@ namespace TSSP.web.Controllers
             ViewBag.Message = "Your application description page.";
             return View();
         }
-        public ActionResult Reviews()
+       
+        public ActionResult Share()
         {
             ViewBag.Message = "Your application description page.";
             return View();
         }
-        public ActionResult Share()
+        public ActionResult CompanyReviews()
         {
             ViewBag.Message = "Your application description page.";
             return View();

@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pages\CompanyReviews.aspx" />
     <Content Include="pages\UpdateCompanyProfile.aspx" />
     <Content Include="pages\UpdateEnterprise.aspx" />
     <Content Include="pages\UpdateJobPosting.aspx" />
@@ -344,18 +345,24 @@
     <Content Include="static\lib\jquery\1.9.1\jquery.js" />
     <Content Include="static\lib\jquery\1.9.1\jquery.min.js" />
     <Content Include="Views\Image\Upload.aspx" />
-    <Content Include="Views\Student\Biography.aspx" />
+    <Content Include="pages\Biography.aspx" />
     <Content Include="Views\Student\Index.aspx" />
-    <Content Include="Views\Student\Project.aspx" />
-    <Content Include="Views\Student\ProjectSubm.aspx" />
-    <Content Include="Views\Student\Reviews.aspx" />
-    <Content Include="Views\Student\Share.aspx" />
+    <Content Include="pages\Project.aspx" />
+    <Content Include="pages\ProjectSubm.aspx" />
+    <Content Include="pages\Share.aspx" />
     <Content Include="Web.config" />
     <Content Include="Sql\数据库创建.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="pages\CompanyReviews.aspx.cs">
+      <DependentUpon>CompanyReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\CompanyReviews.aspx.designer.cs">
+      <DependentUpon>CompanyReviews.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\UpdateCompanyProfile.aspx.cs">
       <DependentUpon>UpdateCompanyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -427,11 +434,11 @@
     <Compile Include="Views\Image\Upload.aspx.designer.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\Biography.aspx.cs">
+    <Compile Include="pages\Biography.aspx.cs">
       <DependentUpon>Biography.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Student\Biography.aspx.designer.cs">
+    <Compile Include="pages\Biography.aspx.designer.cs">
       <DependentUpon>Biography.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Student\Index.aspx.cs">
@@ -441,32 +448,25 @@
     <Compile Include="Views\Student\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\Project.aspx.cs">
+    <Compile Include="pages\Project.aspx.cs">
       <DependentUpon>Project.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Student\Project.aspx.designer.cs">
+    <Compile Include="pages\Project.aspx.designer.cs">
       <DependentUpon>Project.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\ProjectSubm.aspx.cs">
+    <Compile Include="pages\ProjectSubm.aspx.cs">
       <DependentUpon>ProjectSubm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Student\ProjectSubm.aspx.designer.cs">
+    <Compile Include="pages\ProjectSubm.aspx.designer.cs">
       <DependentUpon>ProjectSubm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Student\Reviews.aspx.cs">
-      <DependentUpon>Reviews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Student\Reviews.aspx.designer.cs">
-      <DependentUpon>Reviews.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Student\Share.aspx.cs">
+    <Compile Include="pages\Share.aspx.cs">
       <DependentUpon>Share.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Student\Share.aspx.designer.cs">
+    <Compile Include="pages\Share.aspx.designer.cs">
       <DependentUpon>Share.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
