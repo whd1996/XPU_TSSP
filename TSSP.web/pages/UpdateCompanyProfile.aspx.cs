@@ -14,7 +14,7 @@ namespace TSSP.web.pages
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Session["enterprise"] = 1;
+            //Session["enterprise"] = 1;
             //获取登录后传入session的id  
             int enterpriseId = Convert.ToInt32(Session["enterprise"]);
 

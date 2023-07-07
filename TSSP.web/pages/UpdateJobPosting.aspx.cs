@@ -13,7 +13,7 @@ namespace TSSP.web.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["enterprise"] = 1;
+            //Session["enterprise"] = 1;
             //获取登录后传入session的id  
             int enterpriseId = Convert.ToInt32(Session["enterprise"]);
             //根据公司id关联查询出企业基本信息对象 把企业名称 写入页面
@@ -22,6 +22,21 @@ namespace TSSP.web.pages
             ENamelabel.Text = enterprise.CompanyName;
             //把logo写入页面
             LogoImageButton.ImageUrl = enterprise.LogoImage;
+        }
+
+        protected void DetailsView1_ItemCreated(object sender, EventArgs e)
+        {
+            GridView1.DataBind();
+        }
+
+        protected void DetailsView1_ItemDeleted(object sender, DetailsViewDeletedEventArgs e)
+        {
+            GridView1.DataBind();
+        }
+
+        protected void DetailsView1_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+        {
+            GridView1.DataBind();
         }
     }
 }

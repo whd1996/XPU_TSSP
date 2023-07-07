@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateJobPosting.aspx.cs" Inherits="TSSP.web.pages.UpdateJobPosting" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateResume.aspx.cs" Inherits="TSSP.web.pages.UpdateResume" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-		<title>招聘信息修改</title>
+		<title>简历查看</title>
 		<link rel="stylesheet" type="text/css" href="../../static/Assets/css/reset.css" />
 		<script type="text/javascript" src="../../static/Assets/js/jquery-1.8.3.min.js"></script>
 		<script type="text/javascript" src="../../static/Assets/js/js_z.js"></script>
@@ -31,18 +31,18 @@
 						<li>
 							<a href="/Enterprise/CompanyProfile">企业简介</a>
 						</li>
-						<li class="now">
+						<li>
 							<a href="/Enterprise/JobPostings">企业招聘</a>
 						</li>
 						<li><a href="/pages/UpdateProject">项目发布</a></li>
-						<li>
+						<li class="now">
 							<a href="/pages/UpdateResume">面试邀约</a>
 						</li>
 					</ul>
 
 					<div class="search">
-						<input name="" type="text" class="text">
-						<input name="" type="submit" class="btn" value="">
+						<input name="" type="text" class="text"/>
+						<input name="" type="submit" class="btn" value=""/>
 					</div>
 					<div class="nav_m">
 						<span class="n_icon">&nbsp;</span>
@@ -77,18 +77,16 @@
 			<!--幻灯片-->
 			<div class="scd clearfix">
 				<div class="scd_l">
-					<ul class="s_nav">
-						<li>
-							<a href="/Enterprise/JobPostings">招聘简介</a>
-							<i>&nbsp;</i>
-						</li>						
-					</ul>
-					<div class="title">
-						<span>招聘信息修改</span>
-						<i>&nbsp;</i>
-					</div>
 
-					<ul class="s_nav">
+					<div class="title">
+						<span>简历查看</span>
+						<i>&nbsp;</i>
+					</div>				
+					<ul class="s_nav">		
+						<li>
+							<a href="/pages/UpdateInterView">面试邀约信息</a>
+							<i>&nbsp;</i>
+						</li>
 						<li>
 							<a href="">资质荣誉</a>
 							<i>&nbsp;</i>
@@ -102,19 +100,22 @@
 				<div class="scd_r">							
 					<div class="head">
 						<asp:Label ID="ENamelabel" runat="server" Text="公司名称"></asp:Label>
-						招聘信息修改<em>COMPANY PROFILE</em>
+						简历信息<em>COMPANY PROFILE</em>
 					</div>
 					<div class="s_ctn">
 						<div class="about">
 							<%--	<img src="../../static/Assets/upload/pic5.jpg" alt=""/>--%>
-							<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="203px" Width="1003px">
+							<asp:GridView ID="GridView1" DataKeyNames="sId" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="203px" Width="1003px">
                                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                 <Columns>
-                                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-                                    <asp:BoundField DataField="EnterpriseId" HeaderText="公司编号" SortExpression="EnterpriseId" />
-                                    <asp:BoundField DataField="Position" HeaderText="在招岗位" SortExpression="Position" />
-                                    <asp:BoundField DataField="Salary" HeaderText="工资范围" SortExpression="Salary" />
-                                    <asp:BoundField DataField="Requirements" HeaderText="岗位需求" SortExpression="Requirements" />
+                                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" SortExpression="Id" ReadOnly="True" />
+                                    <asp:BoundField DataField="Position" HeaderText="Position" SortExpression="Position" />
+                                    <asp:BoundField DataField="岗位需求" HeaderText="岗位需求" SortExpression="岗位需求" />
+                                    <asp:BoundField DataField="Salary" HeaderText="岗位工资" SortExpression="Salary" />
+                                    <asp:BoundField DataField="sId" HeaderText="学生编号" SortExpression="sId" InsertVisible="False" />
+                                    <asp:BoundField DataField="FullName" HeaderText="学生姓名" SortExpression="FullName" />
+                                    <asp:BoundField DataField="Email" HeaderText="联系邮箱" SortExpression="Email" />
+                                    <asp:BoundField DataField="Address" HeaderText="学生籍贯" SortExpression="Address" />
                                     <asp:CommandField ShowSelectButton="True" />
                                 </Columns>
                                 <EditRowStyle BackColor="#999999" />
@@ -128,46 +129,83 @@
                                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                             </asp:GridView>
-                            <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="50px" Width="1001px" OnItemCreated="DetailsView1_ItemCreated" OnItemDeleted="DetailsView1_ItemDeleted" OnItemInserted="DetailsView1_ItemInserted">
-                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                                <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
-                                <EditRowStyle BackColor="#999999" />
-                                <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
-                                <Fields>
-                                    <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" InsertVisible="False" ReadOnly="True" />
-                                    <asp:BoundField DataField="EnterpriseId" HeaderText="企业编号" SortExpression="EnterpriseId" />
-                                    <asp:BoundField DataField="Position" HeaderText="岗位" SortExpression="Position" />
-                                    <asp:BoundField DataField="Salary" HeaderText="工资范围" SortExpression="Salary" />
-                                    <asp:BoundField DataField="Requirements" HeaderText="岗位需求" SortExpression="Requirements" />
-                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-                                </Fields>
-                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                            </asp:DetailsView>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" DeleteCommand="DELETE FROM [JobPostings] WHERE [Id] = @Id" InsertCommand="INSERT INTO [JobPostings] ([EnterpriseId], [Position], [Salary], [Requirements]) VALUES (@EnterpriseId, @Position, @Salary, @Requirements)" SelectCommand="SELECT * FROM [JobPostings] WHERE ([Id] = @Id)" UpdateCommand="UPDATE [JobPostings] SET [EnterpriseId] = @EnterpriseId, [Position] = @Position, [Salary] = @Salary, [Requirements] = @Requirements WHERE [Id] = @Id">
-                                <DeleteParameters>
-                                    <asp:Parameter Name="Id" Type="Int32" />
-                                </DeleteParameters>
-                                <InsertParameters>
-                                    <asp:Parameter Name="EnterpriseId" Type="Int32" />
-                                    <asp:Parameter Name="Position" Type="String" />
-                                    <asp:Parameter Name="Salary" Type="String" />
-                                    <asp:Parameter Name="Requirements" Type="String" />
-                                </InsertParameters>
+                            简历详情<br />
+                            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource3">
+                                <AlternatingItemTemplate>
+                                    <span style="background-color: #FAFAD2;color: #284775;">ResumeText:
+                                    <asp:Label ID="ResumeTextLabel" runat="server" Text='<%# Eval("ResumeText") %>' />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </AlternatingItemTemplate>
+                                <EditItemTemplate>
+                                    <span style="background-color: #FFCC66;color: #000080;">ResumeText:
+                                    <asp:TextBox ID="ResumeTextTextBox" runat="server" Text='<%# Bind("ResumeText") %>' />
+                                    <br />
+                                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="更新" />
+                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="取消" />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </EditItemTemplate>
+                                <EmptyDataTemplate>
+                                    <span>未返回数据。</span>
+                                </EmptyDataTemplate>
+                                <InsertItemTemplate>
+                                    <span style="">ResumeText:
+                                    <asp:TextBox ID="ResumeTextTextBox" runat="server" Text='<%# Bind("ResumeText") %>' />
+                                    <br />
+                                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="插入" />
+                                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="清除" />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </InsertItemTemplate>
+                                <ItemTemplate>
+                                    <span style="background-color: #FFFBD6;color: #333333;">ResumeText:
+                                    <asp:Label ID="ResumeTextLabel" runat="server" Text='<%# Eval("ResumeText") %>' />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <div id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                        <span runat="server" id="itemPlaceholder" />
+                                    </div>
+                                    <div style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+                                    </div>
+                                </LayoutTemplate>
+                                <SelectedItemTemplate>
+                                    <span style="background-color: #FFCC66;font-weight: bold;color: #000080;">ResumeText:
+                                    <asp:Label ID="ResumeTextLabel" runat="server" Text='<%# Eval("ResumeText") %>' />
+                                    <br />
+                                    <br />
+                                    </span>
+                                </SelectedItemTemplate>
+                            </asp:ListView>
+                            <br />
+                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT [ResumeText] FROM [PersonalResumes] WHERE ([StudentId] = @StudentId)">
                                 <SelectParameters>
-                                    <asp:ControlParameter ControlID="GridView1" Name="Id" PropertyName="SelectedValue" Type="Int32" />
+                                    <asp:ControlParameter ControlID="GridView1" Name="StudentId" PropertyName="SelectedValue" Type="Int32" />
                                 </SelectParameters>
-                                <UpdateParameters>
-                                    <asp:Parameter Name="EnterpriseId" Type="Int32" />
-                                    <asp:Parameter Name="Position" Type="String" />
-                                    <asp:Parameter Name="Salary" Type="String" />
-                                    <asp:Parameter Name="Requirements" Type="String" />
-                                    <asp:Parameter Name="Id" Type="Int32" />
-                                </UpdateParameters>
                             </asp:SqlDataSource>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" DeleteCommand="DELETE FROM [JobPostings] WHERE [Id] = @Id" InsertCommand="INSERT INTO [JobPostings] ([EnterpriseId], [Position], [Salary], [Requirements]) VALUES (@EnterpriseId, @Position, @Salary, @Requirements)" SelectCommand="SELECT * FROM [JobPostings] WHERE ([EnterpriseId] = @EnterpriseId)" UpdateCommand="UPDATE [JobPostings] SET [EnterpriseId] = @EnterpriseId, [Position] = @Position, [Salary] = @Salary, [Requirements] = @Requirements WHERE [Id] = @Id">
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" DeleteCommand="DELETE FROM [JobPostings] WHERE [Id] = @Id" InsertCommand="INSERT INTO [JobPostings] ([EnterpriseId], [Position], [Salary], [Requirements]) VALUES (@EnterpriseId, @Position, @Salary, @Requirements)" SelectCommand="SELECT
+	r.Id,
+	j.Id jId,
+	j.[Position],
+	j.Requirements 岗位需求,
+	j.Salary,	
+	e.CompanyName,
+	s.id sId,
+	s.FullName,
+	s.Email,
+	s.Address
+FROM
+	Resumes r
+	LEFT JOIN JobPostings j ON r.JobPostingId= j.Id
+	left join Students s on s.Id=r.StudentId
+	left JOIN Enterprises e on e.Id=j.EnterpriseId
+and e.Id=@id" UpdateCommand="UPDATE [JobPostings] SET [EnterpriseId] = @EnterpriseId, [Position] = @Position, [Salary] = @Salary, [Requirements] = @Requirements WHERE [Id] = @Id">
                                 <DeleteParameters>
                                     <asp:Parameter Name="Id" Type="Int32" />
                                 </DeleteParameters>
@@ -178,7 +216,7 @@
                                     <asp:Parameter Name="Requirements" Type="String" />
                                 </InsertParameters>
                                 <SelectParameters>
-                                    <asp:SessionParameter Name="EnterpriseId" SessionField="enterprise" Type="Int32" />
+                                    <asp:SessionParameter Name="id" SessionField="enterprise" />
                                 </SelectParameters>
                                 <UpdateParameters>
                                     <asp:Parameter Name="EnterpriseId" Type="Int32" />

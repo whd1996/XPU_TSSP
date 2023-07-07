@@ -49,11 +49,13 @@ function infoSubmit() {
     if (email == null || email === "") {
         document.getElementById("tishi").innerHTML = "<font color='red'>邮箱号不能为空</font>";
         return false;
-    }
+    } else
+        document.getElementById("tishi").innerHTML = "";
     if (pwd1 == null || pwd1 === "") {
         document.getElementById("tishi").innerHTML = "<font color='red'>密码不能为空</font>";
         return false;
-    }
+    } else
+        document.getElementById("tishi").innerHTML = "";
     if (inputCode.length <= 0) {
         document.getElementById("J_codetext").setAttribute("placeholder", "输入验证码");
         createCode();
@@ -63,6 +65,23 @@ function infoSubmit() {
         document.getElementById("J_codetext").value = "";
         document.getElementById("J_codetext").setAttribute("placeholder", "验证码错误");
         createCode();
+        return false;
+    }
+    else {
+        var registForm = document.getElementById("registForm");
+        registForm.submit();
+        return true;
+    }
+}
+function forgetPwdSubmit() {
+    var inputCode = document.getElementById("J_codetext").value.toUpperCase();
+    var email = $("#email").val();
+    if (email == null || email === "") {
+        document.getElementById("tishi").innerHTML = "<font color='red'>邮箱号不能为空</font>";
+        return false;
+    }
+    if (inputCode.length <= 0) {
+        document.getElementById("J_codetext").setAttribute("placeholder", "输入验证码");
         return false;
     }
     else {
@@ -83,4 +102,27 @@ function pwdValidate() {
         $("#submit").attr("disabled", true).css("pointer-events", "none");
         document.getElementById("tishi").innerHTML = "<font color='red'>两次密码输入不一致</font>";
     }
+}
+function loginValidate() {
+    var pwd = $("#pwd").val();
+    var email = $("#email").val();
+    if (email == null || email === "") {
+        document.getElementById("tishi").innerHTML = "<font color='red'>邮箱号不能为空</font>";
+        return false;
+    } else
+        document.getElementById("tishi").innerHTML = "";
+    if (pwd == null || pwd === "") {
+        document.getElementById("tishi").innerHTML = "<font color='red'>密码不能为空</font>";
+        return false;
+    } else
+        document.getElementById("tishi").innerHTML = "";
+}
+
+function getCode() {//发送邮件
+
+    //因为控件和上传有冲突 所以写js函数解决
+     document.getElementById('registForm').setAttribute("action", "/Email/getCode");
+     document.getElementById('registForm').setAttribute("method", "post");
+     document.getElementById('registForm').submit();
+    
 }

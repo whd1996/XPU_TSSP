@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TSSP.web.Register" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="TSSP.web.Register" %>
 <!DOCTYPE html>
 <html>
 <head>

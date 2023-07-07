@@ -12,7 +12,7 @@ namespace TSSP.web.Views.Enterprise
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["enterprise"] = 1;//测试用
+            //Session["enterprise"] = 1;//测试用
             //获取登录后传入session的id  
             int enterpriseId = Convert.ToInt32(Session["enterprise"]);
 

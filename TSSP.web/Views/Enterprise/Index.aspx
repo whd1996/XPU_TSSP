@@ -32,16 +32,23 @@
         <div class="logo">
             <asp:ImageButton ID="LogoImageButton" runat="server"/>
         </div>
+         
         <ul class="nav clearfix">
-            <li class="now"><a href="/Enterprise/Index">首页</a></li>
-            <li><a href="/Enterprise/CompanyProfile">企业简介</a></li>
-            <li><a href="solution.html">企业招聘</a></li>
-            <li><a href="product.html">项目发布</a></li>
-            <li><a href="service.html">面试邀约</a></li>
+          <li class="now">
+							<a href="/Enterprise/Index">首页</a>
+						</li>
+						<li >
+							<a href="/Enterprise/CompanyProfile">企业简介</a>
+						</li>
+						<li>
+							<a href="/Enterprise/JobPostings">企业招聘</a>
+						</li>
+						<li><a href="/pages/UpdateProject">项目发布</a></li>
+						<li><a href="/pages/UpdateResume">面试邀约</a></li>
         </ul>
         <div class="search">
-        	<input name="" type="text" class="text">
-            <input name="" type="submit" class="btn" value="">
+        	<input name="" type="button" class="text" value=""/>
+            <input name="" type="button" class="btn" value=""/>
         </div>
         <div class="nav_m">
         	<span class="n_icon">&nbsp;</span>
@@ -52,6 +59,7 @@
                 <li><a href="product.html">产品</a></li>
                 <li><a href="service.html">服务</a></li>
                 <li><a href="contact.html">联系我们</a></li>
+                  <li><a href="/Home/Logout">退出登录</a></li>
             </ul>
         </div>
     </div>

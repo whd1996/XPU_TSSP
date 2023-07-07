@@ -39,12 +39,8 @@
 						<li>
 							<a href="/Enterprise/JobPostings">企业招聘</a>
 						</li>
-						<li>
-							<a href="product.html">项目发布</a>
-						</li>
-						<li>
-							<a href="service.html">面试邀约</a>
-						</li>
+						<li><a href="/pages/UpdateProject">项目发布</a></li>
+						<li><a href="/pages/UpdateResume">面试邀约</a></li>
 					</ul>
 
 					<div class="search">
@@ -124,8 +120,6 @@
 								<p style="margin-top:50px; text-indent:2em;">
 									<asp:TextBox style="overflow:hidden" ID="CompanyTbx" runat="server"
 												 BorderStyle="None" ReadOnly="True" TextMode="MultiLine" Height="322px" Width="965px">公司简介
-
-
 									</asp:TextBox>
 								</p>
 						</div>
