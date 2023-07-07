@@ -66,12 +66,12 @@
           <div class="container">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="130px" Width="1422px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px">
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="Id" HeaderText="项目id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-                <asp:BoundField DataField="EnterpriseId" HeaderText="企业id" SortExpression="EnterpriseId" />
+                <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="EnterpriseId" HeaderText="企业编号" SortExpression="EnterpriseId" />
                 <asp:BoundField DataField="Name" HeaderText="项目名称" SortExpression="Name" />
-                <asp:BoundField DataField="Category" HeaderText="分类" SortExpression="Category" />
-                <asp:BoundField DataField="Requirements" HeaderText="要求" SortExpression="Requirements" />
+                <asp:BoundField DataField="Category" HeaderText="项目分类" SortExpression="Category" />
+                <asp:BoundField DataField="Requirements" HeaderText="项目要求" SortExpression="Requirements" />
+                <asp:CommandField ShowSelectButton="True" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -83,8 +83,52 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView></div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString2 %>" SelectCommand="SELECT * FROM [Projects]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [Projects]"></asp:SqlDataSource>
+              <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" DeleteCommand="DELETE FROM [ProjectSubmissions] WHERE [Id] = @Id" InsertCommand="INSERT INTO [ProjectSubmissions] ([ProjectId], [StudentId], [SubmissionText], [SubmissionImage], [SubmissionAttachment]) VALUES (@ProjectId, @StudentId, @SubmissionText, @SubmissionImage, @SubmissionAttachment)" SelectCommand="SELECT * FROM [ProjectSubmissions] WHERE ([ProjectId] = @ProjectId)" UpdateCommand="UPDATE [ProjectSubmissions] SET [ProjectId] = @ProjectId, [StudentId] = @StudentId, [SubmissionText] = @SubmissionText, [SubmissionImage] = @SubmissionImage, [SubmissionAttachment] = @SubmissionAttachment WHERE [Id] = @Id">
+                  <DeleteParameters>
+                      <asp:Parameter Name="Id" Type="Int32" />
+                  </DeleteParameters>
+                  <InsertParameters>
+                      <asp:Parameter Name="ProjectId" Type="Int32" />
+                      <asp:Parameter Name="StudentId" Type="Int32" />
+                      <asp:Parameter Name="SubmissionText" Type="String" />
+                      <asp:Parameter Name="SubmissionImage" Type="String" />
+                      <asp:Parameter Name="SubmissionAttachment" Type="String" />
+                  </InsertParameters>
+                  <SelectParameters>
+                      <asp:ControlParameter ControlID="GridView1" Name="ProjectId" PropertyName="SelectedValue" Type="Int32" />
+                  </SelectParameters>
+                  <UpdateParameters>
+                      <asp:Parameter Name="ProjectId" Type="Int32" />
+                      <asp:Parameter Name="StudentId" Type="Int32" />
+                      <asp:Parameter Name="SubmissionText" Type="String" />
+                      <asp:Parameter Name="SubmissionImage" Type="String" />
+                      <asp:Parameter Name="SubmissionAttachment" Type="String" />
+                      <asp:Parameter Name="Id" Type="Int32" />
+                  </UpdateParameters>
+        </asp:SqlDataSource>
+        <br />
+        <div class="container">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="50px" Width="1414px">
+            <AlternatingRowStyle BackColor="White" />
+            <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
+            <EditRowStyle BackColor="#2461BF" />
+            <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
+            <Fields>
+                <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="ProjectId" HeaderText="ProjectId" SortExpression="ProjectId" />
+                <asp:BoundField DataField="StudentId" HeaderText="StudentId" SortExpression="StudentId" />
+                <asp:BoundField DataField="SubmissionText" HeaderText="项目描述" SortExpression="SubmissionText" />
+                <asp:BoundField DataField="SubmissionImage" HeaderText="成果图路径" SortExpression="SubmissionImage" />
+                <asp:BoundField DataField="SubmissionAttachment" HeaderText="成果附件" SortExpression="SubmissionAttachment" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+            </Fields>
+            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#EFF3FB" />
+        </asp:DetailsView>
+   </div>
               </form>
-   
 </body>
 </html>

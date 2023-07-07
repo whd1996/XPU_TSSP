@@ -28,7 +28,7 @@ namespace TSSP.web.Controllers
             ViewBag.Message = "登出";
             Session.Clear();
             Session.Abandon();
-            return View("/Home/Login");
+            return Redirect("/Home/Login");
         }
         public ActionResult ForgetPwd()
         {

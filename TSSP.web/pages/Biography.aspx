@@ -66,7 +66,7 @@
 
   <!-- main部分 -->
             <p>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString2 %>" SelectCommand="SELECT * FROM [Students] WHERE ([Id] = @Id)" DeleteCommand="DELETE FROM [Students] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Students] ([FullName], [Nickname], [Gender], [Email], [Phone], [Address], [Password]) VALUES (@FullName, @Nickname, @Gender, @Email, @Phone, @Address, @Password)" UpdateCommand="UPDATE [Students] SET [FullName] = @FullName, [Nickname] = @Nickname, [Gender] = @Gender, [Email] = @Email, [Phone] = @Phone, [Address] = @Address, [Password] = @Password WHERE [Id] = @Id">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [Students] WHERE ([Id] = @Id)" DeleteCommand="DELETE FROM [Students] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Students] ([FullName], [Nickname], [Gender], [Email], [Phone], [Address], [Password]) VALUES (@FullName, @Nickname, @Gender, @Email, @Phone, @Address, @Password)" UpdateCommand="UPDATE [Students] SET [FullName] = @FullName, [Nickname] = @Nickname, [Gender] = @Gender, [Email] = @Email, [Phone] = @Phone, [Address] = @Address, [Password] = @Password WHERE [Id] = @Id">
                     <DeleteParameters>
                         <asp:Parameter Name="Id" Type="Int32" />
                     </DeleteParameters>
@@ -127,11 +127,11 @@
                 <asp:BoundField DataField="FullName" HeaderText="姓名" SortExpression="FullName" />
                 <asp:BoundField DataField="Nickname" HeaderText="昵称" SortExpression="Nickname" />
                 <asp:BoundField DataField="Gender" HeaderText="性别" SortExpression="Gender" />
-                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                <asp:BoundField DataField="Phone" HeaderText="电话" SortExpression="Phone" />
+                <asp:BoundField DataField="Email" HeaderText="邮箱" SortExpression="Email" />
+                <asp:BoundField DataField="Phone" HeaderText="手机号" SortExpression="Phone" />
                 <asp:BoundField DataField="Address" HeaderText="地址" SortExpression="Address" />
                 <asp:BoundField DataField="Password" HeaderText="密码" SortExpression="Password" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                <asp:CommandField ShowEditButton="True" />
             </Fields>
             <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
             <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -144,18 +144,21 @@
         &nbsp;</p>
    
         <div class="container">
-        <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="Horizontal" Height="220px" Width="1175px">
+        <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="Horizontal" Height="220px" Width="1175px" DataKeyNames="Id">
             <EditRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
             <Fields>
-                <asp:BoundField DataField="ResumeText" HeaderText="个人简历" SortExpression="ResumeText" />
+                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" InsertVisible="False" ReadOnly="True" />
+                <asp:BoundField DataField="StudentId" HeaderText="学生编号" SortExpression="StudentId" />
+                <asp:BoundField DataField="ResumeText" HeaderText="简历内容" SortExpression="ResumeText" />
+                <asp:CommandField ShowEditButton="True" />
             </Fields>
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
         </asp:DetailsView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString2 %>" SelectCommand="SELECT [ResumeText] FROM [PersonalResumes] WHERE ([StudentId] = @StudentId)">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [PersonalResumes] WHERE ([StudentId] = @StudentId)">
             <SelectParameters>
-                <asp:ControlParameter ControlID="DetailsView1" Name="StudentId" PropertyName="SelectedValue" Type="Int32" />
+                <asp:SessionParameter Name="StudentId" SessionField="student" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
         </div>

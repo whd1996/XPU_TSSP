@@ -68,147 +68,26 @@
     }).use('firm');
 </script>
         <div class="container ">
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Height="50px" Width="1170px">
-            <Fields>
-                <asp:BoundField DataField="StudentId" HeaderText="学生id" SortExpression="StudentId" />
-                <asp:BoundField DataField="ExperienceText" HeaderText="经验分享" SortExpression="ExperienceText" />
-            </Fields>
-        </asp:DetailsView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString2 %>" DeleteCommand="DELETE FROM [InternshipEmploymentExperiences] WHERE [Id] = @Id" InsertCommand="INSERT INTO [InternshipEmploymentExperiences] ([StudentId], [ExperienceText]) VALUES (@StudentId, @ExperienceText)" SelectCommand="SELECT * FROM [InternshipEmploymentExperiences] WHERE ([StudentId] = @StudentId)" UpdateCommand="UPDATE [InternshipEmploymentExperiences] SET [StudentId] = @StudentId, [ExperienceText] = @ExperienceText WHERE [Id] = @Id">
-            <DeleteParameters>
-                <asp:Parameter Name="Id" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="StudentId" Type="Int32" />
-                <asp:Parameter Name="ExperienceText" Type="String" />
-            </InsertParameters>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [InternshipEmploymentExperiences] WHERE ([StudentId] = @StudentId)">
             <SelectParameters>
                 <asp:SessionParameter Name="StudentId" SessionField="student" Type="Int32" />
             </SelectParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="StudentId" Type="Int32" />
-                <asp:Parameter Name="ExperienceText" Type="String" />
-                <asp:Parameter Name="Id" Type="Int32" />
-            </UpdateParameters>
         </asp:SqlDataSource>
+
+            <br />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Width="1403px">
+                <Columns>
+                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                    <asp:BoundField DataField="StudentId" HeaderText="学生编号" SortExpression="StudentId" />
+                    <asp:BoundField DataField="ExperienceText" HeaderText="经验分享" SortExpression="ExperienceText" />
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
 
             </div>
 
         <div class="container ">
-        <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource2" InsertItemPosition="LastItem">
-            <AlternatingItemTemplate>
-                <tr style="background-color:#FFF8DC;">
-                    <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="删除" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="编辑" />
-                    </td>
-                    <td>
-                        <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="StudentIdLabel" runat="server" Text='<%# Eval("StudentId") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="ExperienceTextLabel" runat="server" Text='<%# Eval("ExperienceText") %>' />
-                    </td>
-                </tr>
-            </AlternatingItemTemplate>
-            <EditItemTemplate>
-                <tr style="background-color:#008A8C;color: #FFFFFF;">
-                    <td>
-                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="更新" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="取消" />
-                    </td>
-                    <td>
-                        <asp:Label ID="IdLabel1" runat="server" Text='<%# Eval("Id") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="StudentIdTextBox" runat="server" Text='<%# Bind("StudentId") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="ExperienceTextTextBox" runat="server" Text='<%# Bind("ExperienceText") %>' />
-                    </td>
-                </tr>
-            </EditItemTemplate>
-            <EmptyDataTemplate>
-                <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
-                    <tr>
-                        <td>未返回数据。</td>
-                    </tr>
-                </table>
-            </EmptyDataTemplate>
-            <InsertItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="插入" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="清除" />
-                    </td>
-                    <td>&nbsp;</td>
-                    <td>
-                        <asp:TextBox ID="StudentIdTextBox" runat="server" Text='<%# Bind("StudentId") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="ExperienceTextTextBox" runat="server" Text='<%# Bind("ExperienceText") %>' />
-                    </td>
-                </tr>
-            </InsertItemTemplate>
-            <ItemTemplate>
-                <tr style="background-color: #DCDCDC;color: #000000;width:100px">
-                    <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="删除" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="编辑" />
-                    </td>
-                    <td>
-                        <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="StudentIdLabel" runat="server" Text='<%# Eval("StudentId") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="ExperienceTextLabel" runat="server" Text='<%# Eval("ExperienceText") %>' />
-                    </td>
-                </tr>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <table runat="server">
-                    <tr runat="server">
-                        <td runat="server">
-                            <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
-                                <tr runat="server" style="background-color:#DCDCDC;color: #000000;">
-                                    <th runat="server"></th>
-                                    <th runat="server">Id</th>
-                                    <th runat="server">StudentId</th>
-                                    <th runat="server">ExperienceText</th>
-                                </tr>
-                                <tr id="itemPlaceholder" runat="server">
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr runat="server">
-                        <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;"></td>
-                    </tr>
-                </table>
-            </LayoutTemplate>
-            <SelectedItemTemplate>
-                <tr style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">
-                    <td>
-                        <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="删除" />
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="编辑" />
-                    </td>
-                    <td>
-                        <asp:Label ID="IdLabel" runat="server" Text='<%# Eval("Id") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="StudentIdLabel" runat="server" Text='<%# Eval("StudentId") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="ExperienceTextLabel" runat="server" Text='<%# Eval("ExperienceText") %>' />
-                    </td>
-                </tr>
-            </SelectedItemTemplate>
-        </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString2 %>" DeleteCommand="DELETE FROM [InternshipEmploymentExperiences] WHERE [Id] = @Id" InsertCommand="INSERT INTO [InternshipEmploymentExperiences] ([StudentId], [ExperienceText]) VALUES (@StudentId, @ExperienceText)" SelectCommand="SELECT * FROM [InternshipEmploymentExperiences] WHERE ([StudentId] = @StudentId)" UpdateCommand="UPDATE [InternshipEmploymentExperiences] SET [StudentId] = @StudentId, [ExperienceText] = @ExperienceText WHERE [Id] = @Id">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [InternshipEmploymentExperiences] WHERE ([Id] = @Id)" DeleteCommand="DELETE FROM [InternshipEmploymentExperiences] WHERE [Id] = @Id" InsertCommand="INSERT INTO [InternshipEmploymentExperiences] ([StudentId], [ExperienceText]) VALUES (@StudentId, @ExperienceText)" UpdateCommand="UPDATE [InternshipEmploymentExperiences] SET [StudentId] = @StudentId, [ExperienceText] = @ExperienceText WHERE [Id] = @Id">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int32" />
             </DeleteParameters>
@@ -217,7 +96,7 @@
                 <asp:Parameter Name="ExperienceText" Type="String" />
             </InsertParameters>
             <SelectParameters>
-                <asp:SessionParameter Name="StudentId" SessionField="student" Type="Int32" />
+                <asp:ControlParameter ControlID="GridView1" Name="Id" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="StudentId" Type="Int32" />
@@ -225,6 +104,16 @@
                 <asp:Parameter Name="Id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
+
+            <br />
+            <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource2" Height="50px" Width="1395px">
+                <Fields>
+                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                    <asp:BoundField DataField="StudentId" HeaderText="学生编号" SortExpression="StudentId" />
+                    <asp:BoundField DataField="ExperienceText" HeaderText="经验分享" SortExpression="ExperienceText" />
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                </Fields>
+            </asp:DetailsView>
 
             </div>
     </form>

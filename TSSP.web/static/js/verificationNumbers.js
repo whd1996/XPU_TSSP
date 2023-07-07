@@ -73,23 +73,7 @@ function infoSubmit() {
         return true;
     }
 }
-function forgetPwdSubmit() {
-    var inputCode = document.getElementById("J_codetext").value.toUpperCase();
-    var email = $("#email").val();
-    if (email == null || email === "") {
-        document.getElementById("tishi").innerHTML = "<font color='red'>邮箱号不能为空</font>";
-        return false;
-    }
-    if (inputCode.length <= 0) {
-        document.getElementById("J_codetext").setAttribute("placeholder", "输入验证码");
-        return false;
-    }
-    else {
-        var registForm = document.getElementById("registForm");
-        registForm.submit();
-        return true;
-    }
-}
+
 function pwdValidate() {
     var pwd1 = document.getElementById("pwd1").value;
     var pwd2 = document.getElementById("pwd2").value;
@@ -124,5 +108,24 @@ function getCode() {//发送邮件
      document.getElementById('registForm').setAttribute("action", "/Email/getCode");
      document.getElementById('registForm').setAttribute("method", "post");
      document.getElementById('registForm').submit();
-    
+ 
+}
+function forgetPwdSubmit() {//找回密码
+    var inputCode = document.getElementById("J_codetext").value.toUpperCase();
+    var email = $("#email").val();
+    if (email == null || email === "") {
+        document.getElementById("tishi").innerHTML = "<font color='red'>邮箱号不能为空</font>";
+        return false;
+    }
+    if (inputCode.length <= 0) {
+        document.getElementById("J_codetext").setAttribute("placeholder", "输入验证码");
+        return false;
+    }
+    else {
+        var registForm = document.getElementById("registForm");
+        document.getElementById('registForm').setAttribute("action", "/Login/ForgetPwd");
+        document.getElementById('registForm').setAttribute("method", "post");
+        registForm.submit();
+        return true;
+    }
 }

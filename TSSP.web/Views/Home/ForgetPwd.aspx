@@ -25,7 +25,7 @@
                 </div>
                 <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;重置密码</p>
             </div>
-            <form id="registForm" method="post" action="/Login/ForgetPwd">
+            <form id="registForm" method="post">
                 <p class="p user_icon">
                     <input type="text" placeholder="邮箱号" id="email" name="email" autocomplete="off" class="login_txtbx" required>
                 </p>                 

@@ -45,6 +45,7 @@
 						</li>
 						<li><a href="/pages/UpdateProject">项目发布</a></li>
 						<li><a href="/pages/UpdateResume">面试邀约</a></li>
+            <a href="/Home/Logout" style="font-size:16px;color:rgb(0,69,135)">退出登录</a>
         </ul>
         <div class="search">
         	<input name="" type="button" class="text" value=""/>

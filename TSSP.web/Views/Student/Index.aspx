@@ -30,6 +30,7 @@
           <li class="layui-nav-item "><a href="/pages/Project">项目选定</a></li>
        <li class="layui-nav-item"><a href="/pages/ProjectSubm">项目提交</a></li>
            <li class="layui-nav-item"><a href="/pages/Share">就业分享</a></li>
+            <li class="layui-nav-item">  <a href="/Home/Logout">退出登录</a></li>
         </ul>
       </div>
     </div>
