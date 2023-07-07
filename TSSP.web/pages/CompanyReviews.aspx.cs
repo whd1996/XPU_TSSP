@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TSSP.web.pages
 {
-    public partial class feedback : System.Web.Mvc.ViewPage
+    public partial class CompanyReviews : System.Web.Mvc.ViewPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

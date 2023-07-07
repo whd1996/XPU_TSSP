@@ -11,7 +11,7 @@ namespace TSSP.web.pages
 {
 
 
-    public partial class feedback
+    public partial class CompanyReviews
     {
 
         /// <summary>

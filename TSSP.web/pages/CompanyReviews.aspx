@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Feedback.aspx.cs" Inherits="TSSP.web.pages.feedback" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CompanyReviews.aspx.cs" Inherits="TSSP.web.pages.CompanyReviews" %>
 
 <!DOCTYPE html>
 

@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"/>
-  <title>科技网络-首页</title>
+  <title>首页</title>
   <link rel="stylesheet" href="../../static/stuStatic/layui/css/layui.css"/>
   <link rel="stylesheet" href="../../static/stuStatic/static/css/index.css"/>
 </head>
@@ -41,8 +41,8 @@
         <div>
           <img src="../../static/stuStatic/static/img/banner1.jpg"/>
           <div class="panel">
-            <p class="title">科技网络</p>
-            <p>完美前端体验</p>
+            <p class="title">人才服务社交平台</p>
+            <p>TSSP</p>
           </div>
         </div>
         <div>
