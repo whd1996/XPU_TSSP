@@ -110,6 +110,7 @@
     <Content Include="pages\UpdateProject.aspx" />
     <Content Include="pages\UpdateProjectSubmission.aspx" />
     <Content Include="pages\UpdateResume.aspx" />
+    <Content Include="Sql\dbo.sql" />
     <Content Include="static\Assets\css\reset.css" />
     <Content Include="static\Assets\css\responsive.css" />
     <Content Include="static\Assets\css\thems.css" />

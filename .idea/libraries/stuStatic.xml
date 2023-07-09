@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="stuStatic">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/TSSP.web/static/stuStatic.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -48,7 +48,7 @@ CREATE TABLE CompanyReviews (
 -- 创建招聘信息表
 CREATE TABLE JobPostings (
     Id INT IDENTITY(1,1) PRIMARY KEY, -- 招聘信息ID
-    EnterpriseId INT NOT NULL, -- 企业用户ID
+    EnterpriseId INT NOT NULL, -- 企业ID
     Position VARCHAR(20) NOT NULL, -- 岗位
     Salary VARCHAR(100), -- 待遇
     Requirements VARCHAR(MAX), -- 要求
