@@ -96,7 +96,7 @@ namespace TSSP.web.Controllers
                 dbEnterprise.Password = "123456";
                 es.UpdateEnterprise(dbEnterprise);
                 //重置密码              
-                return Content("学生邮箱密码重置成功！返回登录");
+                return Content("学生邮箱密码重置为123456成功！返回登录");
             }
             else
             {
@@ -105,7 +105,7 @@ namespace TSSP.web.Controllers
                     return new HttpStatusCodeResult(401, "该学生邮箱号不存在！");
                 dbStu.Password = "123456";
                 ss.UpdateStudent(dbStu);
-                return Content("企业邮箱密码重置成功！返回登录");
+                return Content("企业邮箱密码重置为123456成功！返回登录");
             }
 
         }

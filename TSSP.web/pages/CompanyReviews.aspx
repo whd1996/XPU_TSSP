@@ -56,17 +56,8 @@
       <p class="en">Reviews</p>
     </div>
   </div>
-
-
-
-
-
-
-
         <p>
-            &nbsp;</p>
-
-        
+            &nbsp;</p>      
 <script src="../../static/stuStatic/layui/layui.js"></script>
 <script>
     layui.config({

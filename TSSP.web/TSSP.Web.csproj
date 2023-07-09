@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pages\CompanyReviews.aspx" />
+    <Content Include="pages\StudentSubmitProjectSubmission.aspx" />
     <Content Include="pages\UpdateCompanyProfile.aspx" />
     <Content Include="pages\UpdateEnterprise.aspx" />
     <Content Include="pages\UpdateInterView.aspx" />
@@ -373,6 +374,13 @@
     <Compile Include="pages\CompanyReviews.aspx.designer.cs">
       <DependentUpon>CompanyReviews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\StudentSubmitProjectSubmission.aspx.cs">
+      <DependentUpon>StudentSubmitProjectSubmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\StudentSubmitProjectSubmission.aspx.designer.cs">
+      <DependentUpon>StudentSubmitProjectSubmission.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\UpdateCompanyProfile.aspx.cs">
       <DependentUpon>UpdateCompanyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -531,6 +539,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="static\upload\submitProjectFile\" />
+    <Folder Include="static\upload\submitProjectImage\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TSSP.BLL\TSSP.BLL.csproj">

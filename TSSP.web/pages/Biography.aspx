@@ -156,10 +156,22 @@
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
         </asp:DetailsView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [PersonalResumes] WHERE ([StudentId] = @StudentId)">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:XPU-TSSPConnectionString1 %>" SelectCommand="SELECT * FROM [PersonalResumes] WHERE ([StudentId] = @StudentId)" DeleteCommand="DELETE FROM [PersonalResumes] WHERE [Id] = @Id" InsertCommand="INSERT INTO [PersonalResumes] ([StudentId], [ResumeText]) VALUES (@StudentId, @ResumeText)" UpdateCommand="UPDATE [PersonalResumes] SET [StudentId] = @StudentId, [ResumeText] = @ResumeText WHERE [Id] = @Id">
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="StudentId" Type="Int32" />
+                <asp:Parameter Name="ResumeText" Type="String" />
+            </InsertParameters>
             <SelectParameters>
                 <asp:SessionParameter Name="StudentId" SessionField="student" Type="Int32" />
             </SelectParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="StudentId" Type="Int32" />
+                <asp:Parameter Name="ResumeText" Type="String" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
         </asp:SqlDataSource>
         </div>
     

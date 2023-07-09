@@ -57,29 +57,23 @@
     <div class="layui-container">
       <div class="layui-row ">
         <div class="layui-inline content">
-          <div class="layui-inline case-img"><img src="../../static/stuStatic/static/img/case1.jpg"/></div>
-<p class="lable">提交报告总结</p>
-
-
-
+            <a href="/pages/StudentSubmitProjectSubmission">
+          <div class="layui-inline case-img"><img src="../../static/stuStatic/static/img/case1.jpg"/>
+          </div>
+              <p class="lable">提交成果图</p>
+          </a>
         </div>
         <div class="layui-inline content even center">
-          <div class="layui-inline case-img"><img src="../../static/stuStatic/static/img/case2.jpg"/><a href="/pages/CompanyReviews"></div>
-          <p class="lable">提交成果图</p>
-          
-
-
-
-
-
-
+            <a href="/pages/StudentSubmitProjectSubmission">
+          <div class="layui-inline case-img"><img src="../../static/stuStatic/static/img/case2.jpg"/> </div>
+          <p class="lable">提交成果附件</p>
+            </a>
         </div>
-
-
         <div class="layui-inline content">
+            <a href="/pages/CompanyReviews">
           <div class="layui-inline case-img"><img src="../../static/stuStatic/static/img/case9.jpg"/></div>
           <p class="lable">评价企业</p>
-         
+         </a>
 
 
 
