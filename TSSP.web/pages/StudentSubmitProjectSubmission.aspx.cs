@@ -16,7 +16,7 @@ namespace TSSP.web.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["student"] = 1;
+           //Session["student"] = 1;
         }
         //图片上传
         protected void Button1_Click(object sender, EventArgs e)

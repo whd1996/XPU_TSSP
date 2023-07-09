@@ -33,5 +33,11 @@ namespace TSSP.BLL
                 catch { }
             }
         }
+
+        public Students selectStudentById(int  sid)
+        {
+            Students student = (from s in db.Students where s.Id == sid select s).FirstOrDefault();
+            return student;
+        }
     }
 }

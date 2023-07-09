@@ -11,7 +11,7 @@ namespace TSSP.web.Views.Student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["student"] = 1;
+           //Session["student"] = 1;
         }
     }
 }
