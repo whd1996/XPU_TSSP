@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using TSSP.DAL;
 
 namespace TSSP.BLL
@@ -26,7 +25,7 @@ namespace TSSP.BLL
 
         public void UpdateEnterprise(Enterprises enterprise)
         {
-            Enterprises e1= db.Enterprises.Where(e => e.Id ==enterprise.Id).FirstOrDefault();
+            Enterprises e1 = db.Enterprises.Where(e => e.Id == enterprise.Id).FirstOrDefault();
             if (e1 != null)
             {
                 try
@@ -35,7 +34,7 @@ namespace TSSP.BLL
                     e1 = enterprise;
                     db.SubmitChanges();//执行
                 }
-                catch{ }
+                catch { }
             }
         }
     }

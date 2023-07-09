@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TSSP.BLL;
@@ -29,10 +27,10 @@ namespace TSSP.web.Controllers
                 {
                     int eid = Convert.ToInt32(Session["enterprise"]);
                     EnterpriseService es = new EnterpriseService();
-                    Enterprises  enterprise=es.selectEnterpriseById(eid);
+                    Enterprises enterprise = es.selectEnterpriseById(eid);
                     //否则就保存已经上传成功的文件到目标文件夹里
-                    file.SaveAs(Server.MapPath("~/static/Assets/upload/logo"+eid+file.FileName));
-                    string imgPath = "/static/Assets/upload/logo" + eid+file.FileName;//拼接 图片url 
+                    file.SaveAs(Server.MapPath("~/static/Assets/upload/logo" + eid + file.FileName));
+                    string imgPath = "/static/Assets/upload/logo" + eid + file.FileName;//拼接 图片url 
                     enterprise.LogoImage = imgPath;
                     es.UpdateEnterprise(enterprise);
                     return Redirect("/pages/UpdateEnterprise");
@@ -53,13 +51,13 @@ namespace TSSP.web.Controllers
                 {
                     int eid = Convert.ToInt32(Session["enterprise"]);
                     CompanyProfileService cps = new CompanyProfileService();
-                    CompanyProfiles companyProfile= cps.selectCompanyProfileById(eid);
+                    CompanyProfiles companyProfile = cps.selectCompanyProfileById(eid);
                     //否则就保存已经上传成功的文件到目标文件夹里
                     file.SaveAs(Server.MapPath("~/static/Assets/upload/bgi" + eid + file.FileName));
                     string imgPath = "/static/Assets/upload/bgi" + eid + file.FileName;//拼接 图片url 
                     companyProfile.IntroductionImage = imgPath;
                     cps.UpdateCompanyProfile(companyProfile);
-                    
+
                     return Redirect("/pages/UpdateCompanyProfile");
                 }
             }

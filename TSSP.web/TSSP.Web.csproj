@@ -110,6 +110,7 @@
     <Content Include="pages\UpdateProject.aspx" />
     <Content Include="pages\UpdateProjectSubmission.aspx" />
     <Content Include="pages\UpdateResume.aspx" />
+    <Content Include="Sql\dbo.sql" />
     <Content Include="static\Assets\css\reset.css" />
     <Content Include="static\Assets\css\responsive.css" />
     <Content Include="static\Assets\css\thems.css" />
@@ -299,10 +300,6 @@
     <Content Include="static\stuStatic\static\img\us_img7.png" />
     <Content Include="static\stuStatic\static\img\us_img8.png" />
     <Content Include="static\stuStatic\static\js\firm.js" />
-    <Content Include="static\upload\1.jpg" />
-    <Content Include="static\upload\2 .jpg" />
-    <Content Include="static\upload\2.txt" />
-    <Content Include="static\upload\1.txt" />
     <Content Include="Views\Enterprise\CompanyProfile.aspx" />
     <Content Include="Views\Enterprise\Index.aspx" />
     <Content Include="Global.asax" />

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TSSP.BLL;
 using TSSP.DAL;
@@ -20,7 +17,7 @@ namespace TSSP.web.Controllers
             {
                 Enterprises enterprise = ls.EnterpriseCheckLogin(email, password);
                 if (enterprise == null)
-                    return new HttpStatusCodeResult(401, "企业邮箱或密码错误");          
+                    return new HttpStatusCodeResult(401, "企业邮箱或密码错误");
                 else
                 {
                     // System.Web.HttpContext.Current.Session["enterprise"] = enterprise.Id;
@@ -29,12 +26,14 @@ namespace TSSP.web.Controllers
                     return Redirect("/Enterprise/Index");
                 }
             }
-            else {
-                 Students stu = ls.StudentCheckLogin(email, password);
-                if (stu != null) {
+            else
+            {
+                Students stu = ls.StudentCheckLogin(email, password);
+                if (stu != null)
+                {
                     //HttpContext.Current.Session[key] = value;
                     //System.Web.HttpContext.Current.Session["student"] = stu.Id;
-                    Session["student"]= stu.Id;
+                    Session["student"] = stu.Id;
                     Session["isLogin"] = true;
                     return Redirect("/Student/Index");
                 }
@@ -54,7 +53,7 @@ namespace TSSP.web.Controllers
             if (role.Equals("0"))//0表示企业 1表示大学生
             {
                 Enterprises dbEnterprise = es.selectEnterpriseByEmail(email);
-                if(dbEnterprise!=null)
+                if (dbEnterprise != null)
                     return new HttpStatusCodeResult(401, "该企业邮箱号已被使用！");
                 Enterprises enterprise = new Enterprises();
                 enterprise.Password = password;
@@ -67,9 +66,9 @@ namespace TSSP.web.Controllers
             else
             {
                 Students dbStu = ss.selectStudentByEmail(email);
-                if(dbStu!=null)
+                if (dbStu != null)
                     return new HttpStatusCodeResult(401, "该学生邮箱号已被使用！");
-                Students stu=new Students();
+                Students stu = new Students();
                 stu.Email = email;
                 stu.Password = password;
                 ss.addStudent(stu);
@@ -86,7 +85,7 @@ namespace TSSP.web.Controllers
             string email = form["email"];
             String role = form["role"];
             String code = form["code"];
-            if(Convert.ToString(Session["code"])!=code)
+            if (Convert.ToString(Session["code"]) != code)
                 return new HttpStatusCodeResult(401, "验证码错误，请重试！");
             if (role.Equals("0"))//0表示企业 1表示大学生
             {

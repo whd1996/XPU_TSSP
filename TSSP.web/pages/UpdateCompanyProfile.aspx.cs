@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using TSSP.BLL;
 using TSSP.DAL;
 
@@ -23,7 +18,7 @@ namespace TSSP.web.pages
             Enterprises enterprise = es.selectEnterpriseById(enterpriseId);
             ENamelabel.Text = enterprise.CompanyName;
             //把logo写入页面
-            LogoImageButton.ImageUrl = enterprise.LogoImage;     
+            LogoImageButton.ImageUrl = enterprise.LogoImage;
         }
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using TSSP.BLL;
 using TSSP.DAL;
@@ -16,7 +10,7 @@ namespace TSSP.web.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //Session["student"] = 1;
+            //Session["student"] = 1;
         }
         //图片上传
         protected void Button1_Click(object sender, EventArgs e)
@@ -29,11 +23,11 @@ namespace TSSP.web.pages
                 //进入判断，判断文件不是空的，并且长度大于0
                 if (file != null && file.ContentLength > 0)
                 {
-                                            
+
                     //filepath是文件要保存在数据库中的路径
                     string filePath = "/static/upload/submitProjectImage/" + psid + file.FileName;
                     //存在服务器中的路径
-                    file.SaveAs(Server.MapPath("~/static/upload/submitProjectImage/" + psid + file.FileName));                               
+                    file.SaveAs(Server.MapPath("~/static/upload/submitProjectImage/" + psid + file.FileName));
                     //图片路径存数据库
                     ProjectSubmissionService pss = new ProjectSubmissionService();
                     ProjectSubmissions ps = new ProjectSubmissions();

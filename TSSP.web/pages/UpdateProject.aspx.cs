@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using TSSP.BLL;
 using TSSP.DAL;
@@ -22,12 +18,12 @@ namespace TSSP.web.pages
             ENamelabel.Text = enterprise.CompanyName;
             //把logo写入页面
             LogoImageButton.ImageUrl = enterprise.LogoImage;
-        }   
+        }
 
         protected void DetailsView1_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
         {
             GridView1.DataBind();
-            
+
         }
 
         protected void DetailsView1_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)

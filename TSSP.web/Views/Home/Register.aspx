@@ -65,6 +65,5 @@
     </div>
     <%-- 宇宙特效--%>
     <script src="../../static/js/myTeXiao.js"></script>
-
 </body>
 </html>

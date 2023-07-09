@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using TSSP.BLL;
-using TSSP.DAL;
 
 namespace TSSP.web.Views.Student
 {
@@ -13,7 +7,7 @@ namespace TSSP.web.Views.Student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //Session["student"] = 1;
+            //Session["student"] = 1;
         }
         protected void DetailsView2_ItemCreated(object sender, EventArgs e)
         {
@@ -76,7 +70,7 @@ namespace TSSP.web.Views.Student
         }
         protected void InsertButton_Click2(object sender, EventArgs e)
         {
-            SqlDataSource5.InsertParameters[0].DefaultValue=GridView1.SelectedRow.Cells[0].Text;
+            SqlDataSource5.InsertParameters[0].DefaultValue = GridView1.SelectedRow.Cells[0].Text;
             SqlDataSource5.InsertParameters[1].DefaultValue = Convert.ToString(Session["student"]);
             SqlDataSource5.InsertParameters[2].DefaultValue = "分享";
             GridView2.DataBind();

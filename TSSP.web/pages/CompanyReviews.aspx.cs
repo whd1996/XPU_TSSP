@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace TSSP.web.pages
 {
@@ -11,7 +6,7 @@ namespace TSSP.web.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //Session["student"] = 1;
+            //Session["student"] = 1;
         }
     }
 }

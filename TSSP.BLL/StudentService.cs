@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using TSSP.DAL;
 namespace TSSP.BLL
 {
@@ -12,7 +11,7 @@ namespace TSSP.BLL
             db.Students.InsertOnSubmit(stu);
             db.SubmitChanges();
         }
-       
+
         public Students selectStudentByEmail(string email)
         {
             Students student = (from s in db.Students where s.Email == email select s).FirstOrDefault();
@@ -34,7 +33,7 @@ namespace TSSP.BLL
             }
         }
 
-        public Students selectStudentById(int  sid)
+        public Students selectStudentById(int sid)
         {
             Students student = (from s in db.Students where s.Id == sid select s).FirstOrDefault();
             return student;

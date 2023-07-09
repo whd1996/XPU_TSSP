@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using TSSP.DAL;
 namespace TSSP.BLL
 {
@@ -9,7 +8,7 @@ namespace TSSP.BLL
         //根据公司id关联查询公司介绍
         public CompanyProfiles selectCompanyProfileById(int enterpriseId)
         {
-            CompanyProfiles companyProfile = db.CompanyProfiles.Where(e => e.EnterpriseId== enterpriseId).FirstOrDefault();
+            CompanyProfiles companyProfile = db.CompanyProfiles.Where(e => e.EnterpriseId == enterpriseId).FirstOrDefault();
             return companyProfile;
         }
         //修改公司介绍
